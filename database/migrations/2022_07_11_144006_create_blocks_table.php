@@ -13,11 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('schedule', function (Blueprint $table) {
+        Schema::create('blocks', function (Blueprint $table) {
             $table->id();
-            $table->dateTime('date');
+            $table->bigInteger('amount');
+            $table->foreignId('blocktypes_id');
+            $table->float('price');
+            $table->integer('publicAmount');
+            $table->boolean('is_available');
             $table->integer('time');
-            $table->foreignId('user');
+
             $table->timestamps();
         });
     }
@@ -29,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('schedule');
+        Schema::dropIfExists('blocks');
     }
 };

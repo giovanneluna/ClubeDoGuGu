@@ -13,15 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('block', function (Blueprint $table) {
+        Schema::create('blocktypes', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('amount');
-            $table->foreignId('blocktype');
-            $table->float('price');
-            $table->integer('publicAmount');
-            $table->boolean('is_available');
-            $table->integer('time');
-
+            $table->foreignId('sports_id');
             $table->timestamps();
         });
     }
@@ -33,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('block');
+        Schema::dropIfExists('blocktypes');
     }
 };
