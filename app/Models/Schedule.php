@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Schedule extends Model
 {
     use HasFactory;
+
+    public function schedule()
+    {
+        return $this->belongsTo(Block::class);
+    }
 }

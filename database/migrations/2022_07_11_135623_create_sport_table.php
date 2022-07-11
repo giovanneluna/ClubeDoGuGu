@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('sport', function (Blueprint $table) {
             $table->id();
             $table->char('sport');
-            $table->foreignId('user');
+            $table->foreignId('user_id')->constrained('users');
             $table->timestamps();
         });
     }

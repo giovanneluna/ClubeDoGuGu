@@ -57,5 +57,12 @@ class User extends Authenticatable
      */
     protected $appends = [
         'profile_photo_url',
+
     ];
+
+    public function sport()
+    {
+        return $this->hasOne(Sport::class);
+    }
 }
+
