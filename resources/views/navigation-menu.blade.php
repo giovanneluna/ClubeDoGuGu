@@ -17,14 +17,12 @@
                     </x-jet-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('menu.club') }}" :active="request()->routeIs('dashboard')">
+                    <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('menu.schedule-create')">
                         {{ __('Clube') }}
                     </x-jet-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('menu.schedule') }}" :active="request()->routeIs('dashboard')">
-                        {{ __('Agendar') }}
-                    </x-jet-nav-link>
+
                 </div>
             </div>
 

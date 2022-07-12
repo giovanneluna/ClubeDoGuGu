@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\SportsStoreRequest;
 use Illuminate\Http\Request;
 
-class SportsController extends Controller
+class BlocksController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,6 +13,7 @@ class SportsController extends Controller
      */
     public function index()
     {
+        //
     }
 
     /**
@@ -23,7 +23,7 @@ class SportsController extends Controller
      */
     public function create()
     {
-        return view('sport.create');
+        //
     }
 
     /**
@@ -32,8 +32,9 @@ class SportsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(SportsStoreRequest $request)
+    public function store(Request $request)
     {
+        //
     }
 
     /**

@@ -18,7 +18,16 @@ class Sport extends Model
     {
         return $this->hasOne(Blocktype::class);
     }
+
+    protected $fillable = [
+        'sport',
+        'capacity',
+        'equipment',
+        'totalTime',
+        'value',
+    ];
 }
+
 
 
 

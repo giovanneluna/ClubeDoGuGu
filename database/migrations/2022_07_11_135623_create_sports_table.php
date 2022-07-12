@@ -15,7 +15,11 @@ return new class extends Migration
     {
         Schema::create('sports', function (Blueprint $table) {
             $table->id();
-            $table->char('sport');
+            $table->string('sport');
+            $table->integer('capacity');
+            $table->string('equipment');
+            $table->time('totalTime');
+            $table->integer('value');
             $table->foreignId('users_id')->constrained('users');
             $table->timestamps();
         });
