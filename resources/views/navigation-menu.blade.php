@@ -17,8 +17,18 @@
                     </x-jet-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('menu.schedule-create')">
-                        {{ __('Clube') }}
+                    <x-jet-nav-link href="{{ route('sports.create') }}" :active="request()->routeIs('dashboard')">
+                        {{ __('Criar Esporte') }}
+                    </x-jet-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('blocks.create') }}" :active="request()->routeIs('dashboard')">
+                        {{ __('Criar Quadra') }}
+                    </x-jet-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('schedules.create') }}" :active="request()->routeIs('dashboard')">
+                        {{ __('Criar Agendamento') }}
                     </x-jet-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">

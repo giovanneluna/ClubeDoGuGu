@@ -20,15 +20,11 @@ class Sport extends Model
     }
 
     protected $fillable = [
-        'sport',
+        'name',
         'capacity',
         'equipment',
         'totalTime',
         'value',
+
     ];
 }
-
-
-
-
-

@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\BlocksController;
+use App\Http\Controllers\SchedulesController;
 use App\Http\Controllers\SportsController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,7 +17,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::resource('sports', SportsController::class);
-Route::resource('blocks', SportsController::class);
+Route::resource('blocks', BlocksController::class);
+Route::resource('schedules', SchedulesController::class);
 
 
 Route::get('/club', function () {
@@ -36,7 +39,3 @@ Route::middleware([
 Route::get('/clube', function () {
     return view('menu.club');
 })->name('menu.club');
-
-// Route::get('/agendar', function () {
-//     return view('menu.schedule');
-// })->name('menu.schedule');

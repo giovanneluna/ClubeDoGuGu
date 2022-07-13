@@ -13,9 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('blocktypes', function (Blueprint $table) {
+        Schema::create('stock_blocks', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('sports_id');
+            $table->foreignId('block_id');
+            $table->integer('quantity');
             $table->timestamps();
         });
     }
@@ -27,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('blocktypes');
+        Schema::dropIfExists('stock_blocks');
     }
 };

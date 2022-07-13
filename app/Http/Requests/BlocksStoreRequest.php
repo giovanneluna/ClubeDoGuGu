@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use app\Models\Block;
 use Illuminate\Foundation\Http\FormRequest;
 
 class BlocksStoreRequest extends FormRequest
@@ -14,20 +15,24 @@ class BlocksStoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'sport' => [
+            'blocktype' => [
+                'required',
+                'unique:blocks,blocktype',
+            ],
+            'publicamount' => [
+                'required'
+            ],
+            'is_available' => [
+                'required'
+            ],
+            'maxtime' => [
+                'required'
+            ],
+            'price' => [
                 'required',
             ],
-            'capacity' => [
-                'required'
-            ],
-            'equipment' => [
-                'required'
-            ],
-            'totalTime' => [
-                'required'
-            ],
-            'value' => [
-                'required',
+            'users_id' => [
+                'nullable',
             ]
         ];
     }

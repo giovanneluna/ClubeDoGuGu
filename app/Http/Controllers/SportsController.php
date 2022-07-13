@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\SportsStoreRequest;
+use App\Models\Sport;
 use Illuminate\Http\Request;
 
 class SportsController extends Controller
@@ -14,6 +15,8 @@ class SportsController extends Controller
      */
     public function index()
     {
+        $sports = Sport::get();
+        return view('sport.index', compact('sports'));
     }
 
     /**
@@ -34,6 +37,9 @@ class SportsController extends Controller
      */
     public function store(SportsStoreRequest $request)
     {
+        Sport::create($request->all());
+        $sports = Sport::get();
+        return redirect()->route('sports.index', compact('sports'));
     }
 
     /**

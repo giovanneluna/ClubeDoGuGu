@@ -2,10 +2,10 @@
 
 namespace App\Http\Requests;
 
-use app\Models\Sport;
+use App\Models\Schedule;
 use Illuminate\Foundation\Http\FormRequest;
 
-class SportsStoreRequest extends FormRequest
+class SchedulesStoreRequest extends FormRequest
 {
 
     /**
@@ -16,23 +16,21 @@ class SportsStoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => [
+            'date' => [
                 'required',
-                'unique:sports,name',
             ],
-            'capacity' => [
+            'startTime' => [
                 'required'
             ],
-            'equipment' => [
+            'endTime' => [
                 'required'
             ],
-            'totalTime' => [
+            'priceToPay' => [
                 'required'
             ],
-            'value' => [
+            'day' => [
                 'required',
             ]
-
         ];
     }
 }

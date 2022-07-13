@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\BlocksStoreRequest;
+use App\Models\Block;
 use Illuminate\Http\Request;
 
 class BlocksController extends Controller
@@ -13,7 +15,8 @@ class BlocksController extends Controller
      */
     public function index()
     {
-        //
+        $blocks = Block::get();
+        return view('block.index', compact('blocks'));
     }
 
     /**
@@ -23,7 +26,7 @@ class BlocksController extends Controller
      */
     public function create()
     {
-        //
+        return view('block.create');
     }
 
     /**
@@ -32,9 +35,11 @@ class BlocksController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(BlocksStoreRequest $request)
     {
-        //
+        Block::create($request->all());
+        $blocks = Block::get();
+        return redirect()->route('blocks.index', compact('blocks'));
     }
 
     /**

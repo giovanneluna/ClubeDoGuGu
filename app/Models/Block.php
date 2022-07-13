@@ -13,8 +13,16 @@ class Block extends Model
     {
         return $this->belongsTo(Block::class);
     }
+
     public function schedule()
     {
         return $this->hasOne(Schedule::class);
     }
+    protected $fillable  = [
+        'blocktype',
+        'price',
+        'publicamount',
+        'is_available',
+        'maxtime',
+    ];
 }

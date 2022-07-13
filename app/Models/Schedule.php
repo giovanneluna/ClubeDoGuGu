@@ -9,8 +9,21 @@ class Schedule extends Model
 {
     use HasFactory;
 
-    public function schedule()
+    public function block()
     {
         return $this->belongsTo(Block::class);
     }
+
+    protected $fillable = [
+        'block_id',
+        'day',
+        'startTime',
+        'endTime',
+        'date',
+        'priceToPay',
+    ];
+    protected $casts = [
+        'startTime' => 'date:hh:mm',
+        'endTime' => 'date:hh:mm'
+    ];
 }

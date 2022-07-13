@@ -15,12 +15,17 @@ return new class extends Migration
     {
         Schema::create('blocks', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('amount');
-            $table->foreignId('blocktypes_id');
+            $table->integer('blocktype');
+            // 'camelCase'
+            // 'snick_case'
+            // 'PascalCase'
+            // $table->foreignId('blocktypes_id');
             $table->float('price');
-            $table->integer('publicAmount');
+            $table->integer('public_amount');
             $table->boolean('is_available');
-            $table->integer('time');
+            $table->integer('maxtime');
+            $table->string('local');
+            $table->integer('amount');
 
             $table->timestamps();
         });
