@@ -15,24 +15,27 @@ class BlocksStoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'blocktype' => [
+            'block_type' => [
                 'required',
-                'unique:blocks,blocktype',
+                'unique:blocks',
             ],
-            'publicamount' => [
+            'public_amount' => [
                 'required'
             ],
             'is_available' => [
                 'required'
             ],
-            'maxtime' => [
+            'max_time' => [
                 'required'
             ],
             'price' => [
                 'required',
             ],
-            'users_id' => [
-                'nullable',
+            'amount' => [
+                'required',
+            ],
+            'local' => [
+                'required',
             ]
         ];
     }

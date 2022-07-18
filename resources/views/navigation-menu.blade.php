@@ -32,8 +32,18 @@
                     </x-jet-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-
+                    <x-jet-nav-link href="{{ route('clients.create') }}" :active="request()->routeIs('dashboard')">
+                        {{ __('Cadastrar Cliente') }}
+                    </x-jet-nav-link>
                 </div>
+                <li class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('records.index') }}" :active="request()->routeIs('dashboard')">
+                        {{ __('Cadastros') }}
+                    </x-jet-nav-link>
+
+
+
+                </li>
             </div>
 
             <div class="hidden sm:flex sm:items-center sm:ml-6">

@@ -9,22 +9,19 @@ class Sport extends Model
 {
     use HasFactory;
 
-    public function user()
+    public function block()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(Block::class);
     }
 
-    public function blocktype()
+    public function equipment_stock()
     {
-        return $this->hasOne(Blocktype::class);
+        return $this->belongsTo(EquipmentStock::class);
     }
 
     protected $fillable = [
         'name',
-        'capacity',
-        'equipment',
-        'totalTime',
-        'value',
+        'equipment'
 
     ];
 }

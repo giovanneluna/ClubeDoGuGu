@@ -2,10 +2,9 @@
 
 namespace App\Http\Requests;
 
-use App\Models\Schedule;
 use Illuminate\Foundation\Http\FormRequest;
 
-class SchedulesStoreRequest extends FormRequest
+class EquipmentsStoreRequest extends FormRequest
 {
 
     /**
@@ -16,21 +15,17 @@ class SchedulesStoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'time' => [
+            'name' => [
+                'required',
+                'unique:equipments,name'
+            ],
+            'quantity' => [
                 'required',
             ],
-            'start_time' => [
-                'required'
-            ],
-            'end_time' => [
-                'required'
-            ],
-            'total_price' => [
-                'required'
-            ],
-            'paid_out' => [
-                'required',
+            'equipment_id' => [
+                'nullable',
             ]
+
         ];
     }
 }

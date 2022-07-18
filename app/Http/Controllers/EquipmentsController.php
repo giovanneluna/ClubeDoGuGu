@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\BlocksStoreRequest;
-use App\Http\Requests\BlockUpdateRequest;
-use App\Models\Block;
+use App\Http\Requests\EquipmentsStoreRequest;
+use App\Models\Equipment;
 use Illuminate\Http\Request;
 
-class BlocksController extends Controller
+class EquipmentsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +15,7 @@ class BlocksController extends Controller
      */
     public function index()
     {
-        $blocks = Block::get();
-        return view('block.index', compact('blocks'));
+        return view('equipment.create');
     }
 
     /**
@@ -27,8 +25,8 @@ class BlocksController extends Controller
      */
     public function create()
     {
-        $blocks = Block::all();
-        return view('block.create', compact('blocks'));
+        $equipments = Equipment::all();
+        return view('equipment.create', compact('equipments'));
     }
 
     /**
@@ -37,11 +35,11 @@ class BlocksController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(BlocksStoreRequest $request)
+    public function store(EquipmentsStoreRequest $request)
     {
-        Block::create($request->all());
-        $blocks = Block::get();
-        return redirect()->route('blocks.index', compact('blocks'));
+        $equipment =  Equipment::create($request->all());
+        $schedules = Equipment::get();
+        return redirect()->route('equipments.index', compact('equipments'));
     }
 
     /**
@@ -52,8 +50,7 @@ class BlocksController extends Controller
      */
     public function show($id)
     {
-        if (!$blocks = Block::find($id))
-            return redirect()->route('blocks.index', compact('blocks'));
+        //
     }
 
     /**
@@ -64,10 +61,7 @@ class BlocksController extends Controller
      */
     public function edit($id)
     {
-        if (!$block = Block::find($id))
-            return redirect()->route('blocks.index');
-
-        return view('block.edit', compact('block'));
+        //
     }
 
     /**
@@ -77,10 +71,9 @@ class BlocksController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(BlockUpdateRequest $request, Block $block)
+    public function update(Request $request, $id)
     {
-        $block->update($request->validated());
-        return redirect()->route('blocks.index');
+        //
     }
 
     /**
@@ -89,9 +82,8 @@ class BlocksController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Block $block)
+    public function destroy($id)
     {
-        $block->delete();
-        return redirect()->route('blocks.index');
+        //
     }
 }

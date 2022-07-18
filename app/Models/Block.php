@@ -9,9 +9,11 @@ class Block extends Model
 {
     use HasFactory;
 
-    public function block()
+
+
+    public function stock_blocks()
     {
-        return $this->belongsTo(Block::class);
+        return $this->hasMany(StockBlock::class);
     }
 
     public function schedule()
@@ -19,10 +21,12 @@ class Block extends Model
         return $this->hasOne(Schedule::class);
     }
     protected $fillable  = [
-        'blocktype',
+        'block_type',
         'price',
-        'publicamount',
+        'amount',
+        'public_amount',
         'is_available',
-        'maxtime',
+        'max_time',
+        'local',
     ];
 }

@@ -17,15 +17,13 @@ return new class extends Migration
             $table->id();
             $table->integer('time');
             $table->foreignId('client_id');
-            $table->foreignId('block_id');
-            $table->timestamp('start_time');
-            $table->timestamp('end_time');
+            $table->dateTime('start_time');
+            $table->dateTime('end_time');
             $table->float('total_price');
             $table->boolean('paid_out');
 
 
             $table->foreignId('block_id')->constrained('blocks');
-            // $table->foreignId('users_id');
             $table->timestamps();
         });
     }

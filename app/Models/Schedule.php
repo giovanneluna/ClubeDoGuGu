@@ -13,17 +13,22 @@ class Schedule extends Model
     {
         return $this->belongsTo(Block::class);
     }
+    public function client()
+    {
+        return $this->belongsTo(Client::class);
+    }
 
     protected $fillable = [
         'block_id',
-        'day',
-        'startTime',
-        'endTime',
-        'date',
-        'priceToPay',
+        'client_id',
+        'time',
+        'start_time',
+        'end_time',
+        'total_price',
+        'paid_out',
     ];
     protected $casts = [
-        'startTime' => 'date:hh:mm',
-        'endTime' => 'date:hh:mm'
+        'start_time' => 'date:hh:mm',
+        'end_time' => 'date:hh:mm'
     ];
 }

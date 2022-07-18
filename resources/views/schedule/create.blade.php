@@ -18,30 +18,30 @@
     <form action="{{ route('schedules.store') }}" method="POST">
         @csrf
         <div class="form-group">
-            <label>Dia da Semana</label>
-            <input name="day" type="text" class="form-control"value="{{old('day')}}">
+            <label>Tempo de Jogo (Horas)</label>
+            <input name="time" type="text" class="form-control"value="{{old('time')}}">
           </div>
         <div class="form-group">
             <label>Horario de Inicio</label>
-            <input name="startTime" type="time" class="form-control"value="{{old('startTime')}}">
+            <input name="start_time" type="time" class="form-control"value="{{old('start_time')}}">
           </div>
         <div class="form-group">
             <label>Horario de Termino</label>
-            <input name="endTime" type="time" class="form-control"value="{{old('endTime')}}">
+            <input name="end_time" type="time" class="form-control"value="{{old('end_time')}}">
           </div>
         <div class="form-group">
-            <label>Data do Jogo</label>
-            <input name="date" type="date" class="form-control"value="{{old('date')}}">
+            <label>Preço Total</label>
+            <input name="total_price" type="date" class="form-control"value="{{old('total_price')}}">
           </div>
         <div class="form-group">
-            <label>Preço a Pagar</label>
-            <input name="priceToPay" type="text" class="form-control"value="{{old('priceToPay')}}">
+            <label>Pago?</label>
+            <input name="paid_out" type="text" class="form-control"value="{{old('paid_out')}}">
           </div>
           <div class="form-group">
             <label>Quadras</label>
             <select name="block_id">
                 @foreach ($blocks as $block)
-                <option value="{{ $block->id }}"> {{$block->blocktype}} </option>
+                <option value="{{ $block->id }}"> {{$block->block_type}} </option>
 
                 @endforeach
             </select>

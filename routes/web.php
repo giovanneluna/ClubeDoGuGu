@@ -1,6 +1,9 @@
 <?php
 
 use App\Http\Controllers\BlocksController;
+use App\Http\Controllers\ClientsController;
+use App\Http\Controllers\EquipmentsController;
+use App\Http\Controllers\RecordsController;
 use App\Http\Controllers\SchedulesController;
 use App\Http\Controllers\SportsController;
 use Illuminate\Support\Facades\Route;
@@ -16,14 +19,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::resource('clients', ClientsController::class);
 Route::resource('sports', SportsController::class);
+Route::resource('equipments', EquipmentsController::class);
 Route::resource('blocks', BlocksController::class);
 Route::resource('schedules', SchedulesController::class);
-
+Route::resource('records', RecordsController::class);
 
 Route::get('/club', function () {
     return view('menu.club');
 });
+
 
 Route::middleware([
     'auth:sanctum',

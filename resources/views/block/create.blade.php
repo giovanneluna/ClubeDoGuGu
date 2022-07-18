@@ -19,7 +19,7 @@
         @csrf
         <div class="form-group">
             <label>Tipo de Quadra</label>
-            <input name="blocktype" type="text" class="form-control"value="{{old('blocktype')}}">
+            <input name="block_type" type="text" class="form-control"value="{{old('block_type')}}">
           </div>
         <div class="form-group">
             <label>Esta Disponivel</label>
@@ -27,14 +27,26 @@
           </div>
         <div class="form-group">
             <label>Capacidade Total da Arquibancada</label>
-            <input name="publicamount" type="text" class="form-control"value="{{old('publicamount')}}">
+            <input name="public_amount" type="text" class="form-control"value="{{old('public_amount')}}">
           </div>
         <div class="form-group">
-            <label>Tempo Maximo de Jogo</label>
-            <input name="maxtime" type="text" class="form-control"value="{{old('maxtime')}}">
-          </div>
+            <label>Horas Maximas de Jogo</label>
+            <select name="max_time">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+            </select>
+            </div>
         <div class="form-group">
-            <label>Valor Total</label>
+            <label>Localização</label>
+            <input name="local" type="text" class="form-control"value="{{old('local')}}">
+          </div>
+          <div class="form-group">
+            <label>Quantidade Total de Jogadores dentro da Quadra</label>
+            <input name="amount" type="text" class="form-control"value="{{old('amount')}}">
+          </div>
+          <div class="form-group">
+            <label>Preço da Quadra</label>
             <input name="price" type="text" class="form-control"value="{{old('price')}}">
           </div>
         <button>Criar</button>

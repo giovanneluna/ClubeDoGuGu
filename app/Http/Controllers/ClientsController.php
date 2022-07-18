@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\BlocksStoreRequest;
-use App\Http\Requests\BlockUpdateRequest;
-use App\Models\Block;
+use App\Http\Requests\ClientsStoreRequest;
+use App\Http\Requests\ClientUpdateRequest;
+use App\Models\Client;
 use Illuminate\Http\Request;
 
-class BlocksController extends Controller
+class ClientsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +16,8 @@ class BlocksController extends Controller
      */
     public function index()
     {
-        $blocks = Block::get();
-        return view('block.index', compact('blocks'));
+        $clients = Client::get();
+        return view('client.index', compact('clients'));
     }
 
     /**
@@ -27,8 +27,8 @@ class BlocksController extends Controller
      */
     public function create()
     {
-        $blocks = Block::all();
-        return view('block.create', compact('blocks'));
+        $clients = Client::all();
+        return view('client.create', compact('clients'));
     }
 
     /**
@@ -37,11 +37,11 @@ class BlocksController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(BlocksStoreRequest $request)
+    public function store(ClientsStoreRequest $request)
     {
-        Block::create($request->all());
-        $blocks = Block::get();
-        return redirect()->route('blocks.index', compact('blocks'));
+        Client::create($request->all());
+        $clients = Client::get();
+        return redirect()->route('clients.index', compact('clients'));
     }
 
     /**
@@ -52,8 +52,8 @@ class BlocksController extends Controller
      */
     public function show($id)
     {
-        if (!$blocks = Block::find($id))
-            return redirect()->route('blocks.index', compact('blocks'));
+        if (!$clients = Client::find($id))
+            return redirect()->route('clients.index', compact('clients'));
     }
 
     /**
@@ -64,10 +64,10 @@ class BlocksController extends Controller
      */
     public function edit($id)
     {
-        if (!$block = Block::find($id))
-            return redirect()->route('blocks.index');
+        if (!$client = Client::find($id))
+            return redirect()->route('clients.index');
 
-        return view('block.edit', compact('block'));
+        return view('client.edit', compact('client'));
     }
 
     /**
@@ -77,10 +77,10 @@ class BlocksController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(BlockUpdateRequest $request, Block $block)
+    public function update(ClientUpdateRequest $request, Client $client)
     {
-        $block->update($request->validated());
-        return redirect()->route('blocks.index');
+        $client->update($request->validated());
+        return redirect()->route('clients.index');
     }
 
     /**
@@ -89,9 +89,9 @@ class BlocksController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Block $block)
+    public function destroy(Client $client)
     {
-        $block->delete();
-        return redirect()->route('blocks.index');
+        $client->delete();
+        return redirect()->route('clients.index');
     }
 }
