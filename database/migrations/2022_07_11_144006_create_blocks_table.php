@@ -19,7 +19,6 @@ return new class extends Migration
             // 'camelCase'
             // 'snick_case'
             // 'PascalCase'
-            // $table->foreignId('blocktypes_id');
             $table->float('price');
             $table->integer('public_amount');
             $table->boolean('is_available');

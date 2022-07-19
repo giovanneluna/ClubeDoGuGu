@@ -15,7 +15,7 @@ class SportsController extends Controller
      */
     public function index()
     {
-        $sports = Sport::get();
+        $sports = Sport::all();
         return view('sport.index', compact('sports'));
     }
 
@@ -39,7 +39,7 @@ class SportsController extends Controller
     {
         Sport::create($request->all());
         $sports = Sport::get();
-        return redirect()->route('sports.index', compact('sports'));
+        return redirect()->route('sports.index');
     }
 
     /**

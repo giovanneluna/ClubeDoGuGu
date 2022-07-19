@@ -17,7 +17,6 @@ class ClientUpdateRequest extends FormRequest
         return [
             'name' => [
                 'required',
-                'unique:clients,name',
             ],
             'email' => [
                 'required',

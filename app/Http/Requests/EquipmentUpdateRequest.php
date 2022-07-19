@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class EquipmentsStoreRequest extends FormRequest
+class EquipmentUpdateRequest extends FormRequest
 {
 
     /**
@@ -17,7 +17,6 @@ class EquipmentsStoreRequest extends FormRequest
         return [
             'name' => [
                 'required',
-                'unique:equipments'
             ],
             'description' => [
                 'required',

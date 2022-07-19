@@ -21,7 +21,8 @@ class Sport extends Model
 
     protected $fillable = [
         'name',
-        'equipment'
-
+        'block_id',
+        'equipments_id',
+        'equipment_quantity'
     ];
 }

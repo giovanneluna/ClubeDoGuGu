@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\BlockUpdateRequest;
 use App\Http\Requests\EquipmentsStoreRequest;
+use App\Http\Requests\EquipmentsUpdateRequest;
+use App\Http\Requests\EquipmentUpdateRequest;
 use App\Models\Equipment;
 use Illuminate\Http\Request;
 
@@ -15,7 +18,8 @@ class EquipmentsController extends Controller
      */
     public function index()
     {
-        return view('equipment.create');
+        $equipments = Equipment::all();
+        return view('equipment.index', compact('equipments'));
     }
 
     /**
@@ -38,8 +42,7 @@ class EquipmentsController extends Controller
     public function store(EquipmentsStoreRequest $request)
     {
         $equipment =  Equipment::create($request->all());
-        $schedules = Equipment::get();
-        return redirect()->route('equipments.index', compact('equipments'));
+        return redirect()->route('equipments.index');
     }
 
     /**
@@ -61,7 +64,10 @@ class EquipmentsController extends Controller
      */
     public function edit($id)
     {
-        //
+        if (!$equipment = Equipment::find($id))
+            return redirect()->route('equipments.index');
+
+        return view('equipment.edit', compact('equipment'));
     }
 
     /**
@@ -71,9 +77,10 @@ class EquipmentsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(EquipmentUpdateRequest $request, Equipment $equipment)
     {
-        //
+        $equipment->update($request->validated());
+        return redirect()->route('equipments.index');
     }
 
     /**
@@ -82,8 +89,9 @@ class EquipmentsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Equipment $equipment)
     {
-        //
+        $equipment->delete();
+        return redirect()->route('equipments.index');
     }
 }

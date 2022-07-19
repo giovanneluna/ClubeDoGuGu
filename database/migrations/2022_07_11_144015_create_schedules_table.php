@@ -16,9 +16,9 @@ return new class extends Migration
         Schema::create('schedules', function (Blueprint $table) {
             $table->id();
             $table->integer('time');
-            $table->foreignId('client_id');
-            $table->dateTime('start_time');
-            $table->dateTime('end_time');
+            // $table->foreignId('client_id');
+            $table->time('start_time');
+            $table->time('end_time');
             $table->float('total_price');
             $table->boolean('paid_out');
 

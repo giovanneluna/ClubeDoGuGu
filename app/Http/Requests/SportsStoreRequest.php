@@ -18,21 +18,10 @@ class SportsStoreRequest extends FormRequest
         return [
             'name' => [
                 'required',
-                'unique:sports,name',
             ],
-            'capacity' => [
-                'required'
+            'equipments_id' => [
+                'nullable',
             ],
-            'equipment' => [
-                'required'
-            ],
-            'totalTime' => [
-                'required'
-            ],
-            'value' => [
-                'required',
-            ]
-
         ];
     }
 }

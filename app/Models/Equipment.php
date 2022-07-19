@@ -9,10 +9,13 @@ class Equipment extends Model
 {
     use HasFactory;
 
+    public function equipment_stock()
+    {
+        return $this->hasOne(EquipmentStock::class);
+    }
+    protected $table = 'equipments';
     protected $fillable  = [
         'name',
-        'equipment_id',
-        'equipment_quantity',
-        'block_id',
+        'description'
     ];
 }

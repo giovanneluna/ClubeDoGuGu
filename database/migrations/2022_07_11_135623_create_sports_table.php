@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->foreignId('equipments_id');
-            $table->string('equipment_quantity');
+            // $table->string('equipment_quantity');
             $table->timestamps();
         });
     }

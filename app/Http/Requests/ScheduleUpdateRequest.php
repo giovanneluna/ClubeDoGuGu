@@ -2,11 +2,12 @@
 
 namespace App\Http\Requests;
 
-use app\Models\Block;
+use App\Models\Schedule;
 use Illuminate\Foundation\Http\FormRequest;
 
-class BlockUpdateRequest extends FormRequest
+class SchedulesStoreRequest extends FormRequest
 {
+
     /**
      * Get the validation rules that apply to the request.
      *
@@ -14,28 +15,20 @@ class BlockUpdateRequest extends FormRequest
      */
     public function rules()
     {
-
         return [
-
-            'block_type' => [
+            'time' => [
                 'required',
             ],
-            'public_amount' => [
+            'start_time' => [
                 'required'
             ],
-            'is_available' => [
+            'end_time' => [
                 'required'
             ],
-            'max_time' => [
+            'total_price' => [
                 'required'
             ],
-            'price' => [
-                'required',
-            ],
-            'amount' => [
-                'required',
-            ],
-            'local' => [
+            'paid_out' => [
                 'required',
             ]
         ];

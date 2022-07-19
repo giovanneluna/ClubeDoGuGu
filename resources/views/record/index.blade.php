@@ -6,130 +6,37 @@
     <div class="bg-info p-3">
         <div class="bg-info p-3">
             <h1>
-                <p style="text-align:center;">Lista de Esportes do Clube</p>
+                <p style="text-align:center;">Area de Cadastro do Clube</p>
             </h1>
         </div>
         <div class="bg-dark p-1 text-white">
-            <h2 style="text-align:center;">Futebol</h2>
+            <h2 style="text-align:center;">Cadastros do Sistema</h2>
         </div>
         <div class="p-2 mb-2 bg-success text-white">
-            <a href="/sports/create"><button type="button" class="btn btn-dark">Agendar</button></a>
-            <h3 style="text-align:center;">Campos</h3>
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm">
-                        <h4>CampoA</h4>
-                        Tipo:Gramado<br>
-                        Capacidade:300(Arquibancada)<br>
-                        Preço:20 a Hora<br>
-                        Preço para Torneios: 400 o Dia<br>
-                    </div>
-                    <div class="col-sm">
-                        <h4>CampoB</h4>
-                        Tipo:Gramado<br>
-                        Capacidade:200(Arquibancada)<br>
-                        Preço:20 a Hora<br>
-                        Preço para Torneios: 300 o Dia<br>
-                    </div>
-                    <div class="col-sm">
-                        <h4>CampoC</h4>
-                        Tipo:Society<br>
-                        Capacidade:100(Arquibancada)<br>
-                        Preço:20 a Hora<br>
-                        Preço para Torneios: 200 o Dia<br>
-                        <br>
-                    </div>
-                </div>
-            </div>
-            <hr>
-            <h3 style="text-align:center;">Quadras</h3>
-            <hr height="15%" size="10">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm">
-                        <h4>QuadraA</h4>
-                        Capacidade:100(Arquibancada)<br>
-                        Preço:10 a Hora<br>
-                        Preço para Torneios: 200 o Dia<br>
-                    </div>
-                    <div class="col-sm">
-                        <h4>QuadraB</h4>
-                        Capacidade:100(Arquibancada)<br>
-                        Preço:10 a Hora<br>
-                        Preço para Torneios: 200 o Dia<br>
-                    </div>
-                    <div class="col-sm">
-                        <h4>QuadraC</h4>
-                        Capacidade:100(Arquibancada)<br>
-                        Preço:10 a Hora<br>
-                        Preço para Torneios: 200 o Dia<br>
-                    </div>
-                </div>
-                <br>
-            </div>
-        </div>
 
-        <br>
-        <br>
+            <h3 style="text-align:center;">Esportes Cadastrados </p>
+                <a href="/sports/"><button type="button" class="btn btn-dark">Visualizar </button></a>
+                <a href="sports/create"><button type="submit" class="btn btn-primary">Cadastrar</button></a>
+                <p>
+                    <hr>
+                <h3 style="text-align:center;">Quadras Cadastradas </p>
+                    <a href="/blocks/"><button type="button" class="btn btn-dark">Visualizar</button></a>
+                    <a href="blocks/create"><button type="submit" class="btn btn-primary">Cadastrar</button></a>
+                    <p>
+                        <hr>
+                    <h3 style="text-align:center;">Clientes Cadastrados </p>
+                        <a href="/clients/"><button type="button" class="btn btn-dark">Visualizar</button></a>
+                        <a href="clients/create"><button type="submit" class="btn btn-primary">Cadastrar</button></a>
+                        <p>
+                            <hr>
+                        <h3 style="text-align:center;">Equipamentos Cadastrados </p>
+                            <a href="/equipments"><button type="button"class="btn btn-dark">Visualizar</button></a>
+                            <a href="equipments/create"><button type="submit" class="btn btn-primary">Cadastrar</button></a>
+                            <p>
+                                <hr>
+                            <h3 style="text-align:center;">Agendamentos Feitos </p><a href="/schedules/"><button type="button" class="btn btn-dark">Visualizar</button></a>
+                                <a href="schedules/create"><button type="submit" class="btn btn-primary">Cadastrar</button></a>
 
+                                <p>
 
-        <div class="bg-dark p-1 text-white">
-            <h2 style="text-align:center;">Basquete</h2>
-        </div>
-        <div class="p-2 mb-2 bg-warning text-white">
-            <a href="/sports/create"><button type="button" class="btn btn-dark">Agendar</button></a>
-            <h3 style="text-align:center;">Campos</h3>
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm">
-                        <h4>QuadraD</h4>
-                        Capacidade:100(Arquibancada)<br>
-                        Preço:20 a Hora<br>
-                        Preço para Torneios: 200 o Dia<br>
-                    </div>
-                    <div class="col-sm">
-                        <h4>CampoE</h4>
-                        Capacidade:100(Arquibancada)<br>
-                        Preço:20 a Hora<br>
-                        Preço para Torneios: 200 o Dia<br>
-                    </div>
-                    <div class="col-sm">
-                        <h4>CampoF</h4>
-                        Capacidade:100(Arquibancada)<br>
-                        Preço:20 a Hora<br>
-                        Preço para Torneios: 200 o Dia<br>
-                        <br>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-        <br>
-        <br>
-
-        <div class="bg-dark p-1 text-white">
-            <h2 style="text-align:center;">Volei</h2>
-        </div>
-        <div class="p-2 mb-2 bg-danger text-white">
-            <a href="/sports/create"><button type="button" class="btn btn-dark">Agendar</button></a>
-            <h3 style="text-align:center;">Campos</h3>
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm">
-                        <h4>QuadraG</h4>
-                        Capacidade:100(Arquibancada)<br>
-                        Preço:20 a Hora<br>
-                        Preço para Torneios: 200 o Dia<br>
-                    </div>
-                    <div class="col-sm">
-                        <h4>CampoH</h4>
-                        Capacidade:100(Arquibancada)<br>
-                        Preço:20 a Hora<br>
-                        Preço para Torneios: 200 o Dia<br>
-                    </div>
-                    <div class="col-sm">
-                        <h4>CampoI</h4>
-                        Capacidade:100(Arquibancada)<br>
-                        Preço:20 a Hora<br>
-                        Preço para Torneios: 200 o Dia<br>
 </x-app-layout>

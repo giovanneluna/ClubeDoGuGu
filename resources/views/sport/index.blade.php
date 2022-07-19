@@ -17,6 +17,15 @@
        Equipamento:{{ $sport->equipment }}<br>
        Tempo Total de Jogo:{{ $sport->totalTime }}<br>
        Valor do Jogo:{{ $sport->value }}<br>
+       <a href="{{route('clients.edit',$client->id)}}"><button type="submit" class="btn btn-primary">Editar</button></a>
+       <div>
+       <form method="POST" action="{{route('clients.destroy',$client->id)}}">
+        {{ csrf_field() }}
+        {{ method_field('DELETE') }}
+
+        <div class="form-group">
+            <input type="submit" class="btn btn-danger delete-user" value="DELETAR">
+        </div>
        </center>
 
 

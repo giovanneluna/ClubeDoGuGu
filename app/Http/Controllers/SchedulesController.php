@@ -40,9 +40,10 @@ class SchedulesController extends Controller
 
     public function store(SchedulesStoreRequest $request)
     {
+        $blocks = Block::all();
         Schedule::create($request->all());
         $schedules = Schedule::get();
-        return redirect()->route('schedules.index', compact('schedules'));
+        return redirect()->route('schedules.index', compact('schedules', 'blocks'));
     }
 
     /**
@@ -64,7 +65,11 @@ class SchedulesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $blocks = Block::all();
+        if (!$schedule = Schedule::find($id))
+            return redirect()->route('schedules.index');
+
+        return view('schedule.edit', compact('schedule', 'blocks'));
     }
 
     /**
@@ -74,9 +79,11 @@ class SchedulesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(SchedulesStoreRequest $request, Schedule $schedule)
     {
-        //
+        $blocks = Block::all();
+        $schedule->update($request->validated());
+        return redirect()->route('schedules.index', compact('blocks'));
     }
 
     /**
@@ -85,8 +92,9 @@ class SchedulesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Schedule $schedule)
     {
-        //
+        $schedule->delete();
+        return redirect()->route('schedules.index');
     }
 }

@@ -14,8 +14,8 @@
 
         <ul>
             @foreach ($blocks as $block)
-                <br>
                 <center>
+                    <br>
                     Tipo de quadra:{{ $block->block_type }}<br>
                     Localização:{{ $block->local }}<br>
                     Quantidade de Jogadores Dentro da Quadra:{{ $block->amount }}<br>
@@ -23,7 +23,7 @@
                     Tempo Maximo:{{ $block->max_time }}<br>
                     Preço:{{ $block->price }}<br>
                     Disponivel:{{ $block->is_available }}<br>
-                    <a href="{{ route('blocks.edit', $block->id) }}"><button type="submit">Editar</button></a>
+                    <a href="{{ route('blocks.edit', $block->id) }}"><button type="submit" class="btn btn-primary">Editar</button></a>
                     <div>
                         <form method="POST" action="{{ route('blocks.destroy', $block->id) }}">
                             {{ csrf_field() }}
@@ -32,6 +32,7 @@
                                 <input type="submit" class="btn btn-danger delete-user" value="DELETAR">
                             </div>
                         </form>
+                        <hr>
                 </center>
 
 

@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class EquipmentStock extends Model
 {
     use HasFactory;
+
+    public function sport()
+    {
+        return $this->hasOne(Sport::class);
+    }
 }

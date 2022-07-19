@@ -4,6 +4,7 @@
     <html lang="pt-br">
 
     <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -14,18 +15,23 @@
         @foreach ($errors->all() as $error)
             <span>{{ $error }}</span>
         @endforeach
-
+<center><h1>Cadastrar Equipamento</h1></center> <br>
         <form action="{{ route('equipments.store') }}" method="POST">
             @csrf
-            <div class="form-group">
+            <center>
+            <form class="row g-3">
+                <div class="col-md-4">
                 <label>Equipamento</label>
-                <input name="blocktype" type="text" class="form-control"value="{{old('blocktype')}}">
+                <input name="name" type="text" class="form-control"value="{{old('name')}}">
               </div>
-            <div class="form-group">
+              <form class="row g-3">
+                <div class="col-md-4">
                 <label>Quantidade Para Criar</label>
-                <input name="is_available" type="text" class="form-control"value="{{old('is_available')}}">
+                <input name="description" type="text" class="form-control"value="{{old('description')}}">
               </div>
-            <button>Criar</button>
+              <br>
+              <button type="submit" class="btn btn-primary">Criar</button>
+        </center>
         </form>
     </body>
 
