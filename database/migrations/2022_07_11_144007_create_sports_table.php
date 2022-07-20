@@ -16,7 +16,8 @@ return new class extends Migration
         Schema::create('sports', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->foreignId('equipments_id');
+            $table->foreignId('equipments_id')->constrained('equipments');
+            $table->foreignId('block_id')->constrained('blocks');
             // $table->string('equipment_quantity');
             $table->timestamps();
         });

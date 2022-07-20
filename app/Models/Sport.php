@@ -19,10 +19,13 @@ class Sport extends Model
         return $this->belongsTo(EquipmentStock::class);
     }
 
+
+
     protected $fillable = [
         'name',
-        'block_id',
         'equipments_id',
-        'equipment_quantity'
+        'block_id',
+        'equipment_quantity',
+
     ];
 }

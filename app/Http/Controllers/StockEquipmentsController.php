@@ -2,14 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\SportsStoreRequest;
-use App\Models\Block;
 use App\Models\Equipment;
-use App\Models\Schedule;
-use App\Models\Sport;
+use App\Models\EquipmentStock;
 use Illuminate\Http\Request;
 
-class SportsController extends Controller
+class StockEquipmentsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,11 +15,9 @@ class SportsController extends Controller
      */
     public function index()
     {
-
-        $blocks = Block::all();
-        $equipment = Equipment::all();
-        $sports = Sport::all();
-        return view('sport.index', compact('sports', 'blocks', 'equipment'));
+        $equipments = Equipment::all();
+        $stock_equips = EquipmentStock::all();
+        return view('stock.index', compact('stock_equips', 'equipments'));
     }
 
     /**
@@ -32,10 +27,7 @@ class SportsController extends Controller
      */
     public function create()
     {
-        $equipments = Equipment::all();
-        $blocks = Block::all();
-        $sports = Sport::all();
-        return view('sport.create', compact('sports', 'blocks', 'equipments'));
+        //
     }
 
     /**
@@ -44,11 +36,9 @@ class SportsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(SportsStoreRequest $request)
+    public function store(Request $request)
     {
-
-        Sport::create($request->all());
-        return redirect()->route('sports.index');
+        //
     }
 
     /**
@@ -70,13 +60,7 @@ class SportsController extends Controller
      */
     public function edit($id)
     {
-        $sport = Sport::all();
-        $equipments = Equipment::all();
-        $blocks = Block::all();
-        if (!$sport = Sport::find($id))
-            return redirect()->route('sports.index');
-
-        return view('sport.edit', compact('equipments', 'blocks', 'sport'));
+        //
     }
 
     /**
@@ -86,13 +70,9 @@ class SportsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(SportsController $request, Sport $sport)
+    public function update(Request $request, $id)
     {
-        $equipments = Equipment::all();
-        $blocks = Block::all();
-        $sports = Sport::all();
-        $sport->update($request->validated());
-        return redirect()->route('sports.index', compact('blocks', 'equipments', 'sports'));
+        //
     }
 
     /**

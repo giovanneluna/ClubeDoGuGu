@@ -17,7 +17,6 @@ class BlocksStoreRequest extends FormRequest
         return [
             'block_type' => [
                 'required',
-                'unique:blocks',
             ],
             'public_amount' => [
                 'required'

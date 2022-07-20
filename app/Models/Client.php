@@ -14,6 +14,11 @@ class Client extends Model
         return $this->hasMany(Schedule::class);
     }
 
+    public function client()
+    {
+        return $this->belongsTo(Client::class);
+    }
+
     protected $fillable = [
         'name',
         'email',

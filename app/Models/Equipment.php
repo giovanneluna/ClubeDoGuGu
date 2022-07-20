@@ -14,6 +14,7 @@ class Equipment extends Model
         return $this->hasOne(EquipmentStock::class);
     }
     protected $table = 'equipments';
+
     protected $fillable  = [
         'name',
         'description'

@@ -21,8 +21,6 @@ return new class extends Migration
             $table->time('end_time');
             $table->float('total_price');
             $table->boolean('paid_out');
-
-
             $table->foreignId('block_id')->constrained('blocks');
             $table->timestamps();
         });

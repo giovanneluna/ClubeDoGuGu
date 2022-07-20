@@ -6,6 +6,7 @@ use App\Http\Controllers\EquipmentsController;
 use App\Http\Controllers\RecordsController;
 use App\Http\Controllers\SchedulesController;
 use App\Http\Controllers\SportsController;
+use App\Http\Controllers\StockEquipmentsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,6 +23,7 @@ use Illuminate\Support\Facades\Route;
 Route::resource('clients', ClientsController::class);
 Route::resource('sports', SportsController::class);
 Route::resource('equipments', EquipmentsController::class);
+Route::resource('stock', StockEquipmentsController::class);
 Route::resource('blocks', BlocksController::class);
 Route::resource('schedules', SchedulesController::class);
 Route::resource('records', RecordsController::class);

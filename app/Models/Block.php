@@ -20,6 +20,11 @@ class Block extends Model
     {
         return $this->hasOne(Schedule::class);
     }
+
+    public function sport()
+    {
+        return $this->hasOne(Sport::class);
+    }
     protected $fillable  = [
         'block_type',
         'price',

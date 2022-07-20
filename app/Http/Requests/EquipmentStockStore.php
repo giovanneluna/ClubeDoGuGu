@@ -2,11 +2,11 @@
 
 namespace App\Http\Requests;
 
-use app\Models\Sport;
 use Illuminate\Foundation\Http\FormRequest;
 
-class SportsStoreRequest extends FormRequest
+class EquipmentStockStore extends FormRequest
 {
+
 
     /**
      * Get the validation rules that apply to the request.
@@ -16,9 +16,13 @@ class SportsStoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => [
+            'equipment_id' => [
                 'required',
             ],
+            'quantity' => [
+                'required',
+            ],
+
         ];
     }
 }

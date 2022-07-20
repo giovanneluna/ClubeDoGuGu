@@ -13,4 +13,15 @@ class EquipmentStock extends Model
     {
         return $this->hasOne(Sport::class);
     }
+    public function equipment()
+    {
+        return $this->belongsTo(Equipment::class);
+    }
+
+
+    protected $fillable = [
+        'equipment_id',
+        'quantity',
+
+    ];
 }
