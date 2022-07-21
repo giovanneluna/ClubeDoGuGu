@@ -34,9 +34,18 @@
                             <input name="description" type="text"
                                 class="form-control"value="{{ $equipment->description }}">
                         </div>
-                        <button type="submit" class="btn btn-primary">Editar</button>
-                    </form>
-                    <center>
+                        <form class="row g-3">
+                            <div class="col-md-4">
+                                <label>Tipo de Equipamento</label>
+                                <select class="form-select" name="equipment_type_id">
+                                    @foreach ($equipment_types as $equipment_type)
+                                        <option value="{{ $equipment_type->id }}"> {{ $equipment_type->name }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                                <button type="submit" class="btn btn-primary">Editar</button>
+                        </form>
+                        <center>
     </body>
 
     </html>

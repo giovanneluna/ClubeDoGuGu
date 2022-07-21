@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\BlocksStoreRequest;
 use App\Http\Requests\BlockUpdateRequest;
 use App\Models\Block;
+use App\Models\Sport;
 use Illuminate\Http\Request;
 
 class BlocksController extends Controller
@@ -16,8 +17,9 @@ class BlocksController extends Controller
      */
     public function index()
     {
+        $sports = Sport::all();
         $blocks = Block::get();
-        return view('block.index', compact('blocks'));
+        return view('block.index', compact('blocks', 'sports'));
     }
 
     /**
@@ -27,8 +29,10 @@ class BlocksController extends Controller
      */
     public function create()
     {
+
+        $sports = Sport::all();
         $blocks = Block::all();
-        return view('block.create', compact('blocks'));
+        return view('block.create', compact('blocks', 'sports'));
     }
 
     /**
@@ -40,8 +44,7 @@ class BlocksController extends Controller
     public function store(BlocksStoreRequest $request)
     {
         Block::create($request->all());
-        $blocks = Block::get();
-        return redirect()->route('blocks.index', compact('blocks'));
+        return redirect()->route('blocks.index');
     }
 
     /**
@@ -64,6 +67,7 @@ class BlocksController extends Controller
      */
     public function edit($id)
     {
+
         if (!$block = Block::find($id))
             return redirect()->route('blocks.index');
 

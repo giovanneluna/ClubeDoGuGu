@@ -7,7 +7,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class Sport extends Model
 {
+
+
     use HasFactory;
+
+    protected $table = 'sports';
+    protected $fillable = [
+        'name',
+        'equipments_id',
+        'equipment_quantity',
+    ];
 
     public function block()
     {
@@ -19,13 +28,8 @@ class Sport extends Model
         return $this->belongsTo(EquipmentStock::class);
     }
 
-
-
-    protected $fillable = [
-        'name',
-        'equipments_id',
-        'block_id',
-        'equipment_quantity',
-
-    ];
+    public function equipment()
+    {
+        return $this->belongsTo(Equipment::class, 'equipments_id');
+    }
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\SportsStoreRequest;
+use App\Http\Requests\SportUpdateRequest;
 use App\Models\Block;
 use App\Models\Equipment;
 use App\Models\Schedule;
@@ -22,6 +23,7 @@ class SportsController extends Controller
         $blocks = Block::all();
         $equipment = Equipment::all();
         $sports = Sport::all();
+
         return view('sport.index', compact('sports', 'blocks', 'equipment'));
     }
 
@@ -86,13 +88,11 @@ class SportsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(SportsController $request, Sport $sport)
+    public function update(SportUpdateRequest $request, Sport $sport)
     {
-        $equipments = Equipment::all();
-        $blocks = Block::all();
-        $sports = Sport::all();
         $sport->update($request->validated());
-        return redirect()->route('sports.index', compact('blocks', 'equipments', 'sports'));
+
+        return redirect()->route('sports.index');
     }
 
     /**
@@ -101,8 +101,10 @@ class SportsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Sport $sport)
     {
-        //
+
+        $sport->delete();
+        return redirect()->route('sports.index');
     }
 }

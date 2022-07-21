@@ -33,27 +33,17 @@
                     </div>
                     <form class="row g-3">
                         <div class="col-md-4">
-                            <label>Quadra</label>
-                            <select class="form-select" name="block_id">
-                                @foreach ($blocks as $block)
-                                    <option value="{{ $block->id }}"> {{ $block->block_type }} </option>
+                            <label>Equipamento</label>
+                            <select class="form-select" name="equipments_id">
+                                @foreach ($equipments as $equipment)
+                                    <option value="{{ $equipment->id }}"> {{ $equipment->name }} </option>
                                 @endforeach
                             </select>
 
                         </div>
-                        <form class="row g-3">
-                            <div class="col-md-4">
-                                <label>Equipamento</label>
-                                <select class="form-select" name="equipments_id">
-                                    @foreach ($equipments as $equipment)
-                                        <option value="{{ $equipment->id }}"> {{ $equipment->name }} </option>
-                                    @endforeach
-                                </select>
 
-                            </div>
-
-                            <button type="submit" class="btn btn-primary">Criar</button>
-                        </form>
+                        <button type="submit" class="btn btn-primary">Criar</button>
+                    </form>
     </body>
 
     </html>

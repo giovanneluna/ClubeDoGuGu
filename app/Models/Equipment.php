@@ -9,14 +9,26 @@ class Equipment extends Model
 {
     use HasFactory;
 
-    public function equipment_stock()
-    {
-        return $this->hasOne(EquipmentStock::class);
-    }
     protected $table = 'equipments';
 
     protected $fillable  = [
         'name',
-        'description'
+        'description',
+        'equipment_type_id',
     ];
+
+    public function equipment_stock()
+    {
+        return $this->hasOne(EquipmentStock::class);
+    }
+
+    public function sport()
+    {
+        return $this->hasMany(Sport::class);
+    }
+
+    public function equipment_type()
+    {
+        return $this->belongsTo(EquipmentType::class);
+    }
 }

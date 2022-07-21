@@ -23,7 +23,7 @@ class Block extends Model
 
     public function sport()
     {
-        return $this->hasOne(Sport::class);
+        return $this->hasMany(Sport::class);
     }
     protected $fillable  = [
         'block_type',

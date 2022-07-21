@@ -11,14 +11,14 @@
     </head>
 
     <body>
-
+        <center><a href="sports/create" button type="submit" class="btn btn-primary">Cadastrar
+                Esporte </button></a></center>
         <ul>
             @foreach ($sports as $sport)
                 <br>
                 <center>
                     Nome do Esporte:{{ $sport->name }}<br>
-                    Quadra:{{ $sport->block->block_type }}<br>
-                    Equipamento:{{ $equipment->name }}<br>
+                    Equipamento:{{ $sport->equipment->name }}<br>
                     <a href="{{ route('sports.edit', $sport->id) }}"><button type="submit"
                             class="btn btn-primary">Editar</button></a>
                     <div>

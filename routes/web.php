@@ -20,18 +20,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::resource('clients', ClientsController::class);
-Route::resource('sports', SportsController::class);
-Route::resource('equipments', EquipmentsController::class);
-Route::resource('stock', StockEquipmentsController::class);
-Route::resource('blocks', BlocksController::class);
-Route::resource('schedules', SchedulesController::class);
-Route::resource('records', RecordsController::class);
-
-Route::get('/club', function () {
-    return view('menu.club');
-});
-
+Route::get('/', function () {
+    return view('welcome');
+})->name('welcome');
 
 Route::middleware([
     'auth:sanctum',
@@ -41,9 +32,12 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+
+    Route::resource('clients', ClientsController::class);
+    Route::resource('sports', SportsController::class);
+    Route::resource('equipments', EquipmentsController::class);
+    Route::resource('stock', StockEquipmentsController::class);
+    Route::resource('blocks', BlocksController::class);
+    Route::resource('schedules', SchedulesController::class);
+    Route::resource('records', RecordsController::class);
 });
-
-
-Route::get('/clube', function () {
-    return view('menu.club');
-})->name('menu.club');

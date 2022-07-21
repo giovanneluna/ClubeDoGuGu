@@ -22,6 +22,9 @@ class EquipmentsStoreRequest extends FormRequest
             'description' => [
                 'required',
             ],
+            'equipment_type_id' => [
+                'required',
+            ],
 
 
         ];

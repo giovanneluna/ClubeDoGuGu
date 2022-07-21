@@ -1,6 +1,3 @@
-@foreach ($errors->all() as $error)
-    <span>{{ $error }}</span>
-@endforeach
 <nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -16,39 +13,33 @@
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                        {{ __('Home') }}
+                        {{ __('Pagina Principal') }}
                     </x-jet-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('sports.create') }}" :active="request()->routeIs('dashboard')">
+                    <x-jet-nav-link href="{{ route('sports.index') }}" :active="request()->routeIs('dashboard')">
                         {{ __('Criar Esporte') }}
                     </x-jet-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('blocks.create') }}" :active="request()->routeIs('dashboard')">
+                    <x-jet-nav-link href="{{ route('blocks.index') }}" :active="request()->routeIs('dashboard')">
                         {{ __('Criar Quadra') }}
                     </x-jet-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('schedules.create') }}" :active="request()->routeIs('dashboard')">
+                    <x-jet-nav-link href="{{ route('schedules.index') }}" :active="request()->routeIs('dashboard')">
                         {{ __('Criar Agendamento') }}
                     </x-jet-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('clients.create') }}" :active="request()->routeIs('dashboard')">
+                    <x-jet-nav-link href="{{ route('clients.index') }}" :active="request()->routeIs('dashboard')">
                         {{ __('Cadastrar Cliente') }}
                     </x-jet-nav-link>
                 </div>
                 <li class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('equipments.create') }}" :active="request()->routeIs('dashboard')">
+                    <x-jet-nav-link href="{{ route('equipments.index') }}" :active="request()->routeIs('dashboard')">
                         {{ __('Criar Equipamentos') }}
                     </x-jet-nav-link>
-                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                        <x-jet-nav-link href="{{ route('records.index') }}" :active="request()->routeIs('dashboard')">
-                            {{ __('Cadastros') }}
-                        </x-jet-nav-link>
-                    </div>
-
 
 
                 </li>

@@ -11,25 +11,28 @@
     </head>
 
     <body>
-
+        <center><a href="equipments/create" button type="submit" class="btn btn-primary">Cadastrar
+                Equipamento</button></a></center>
         <ul>
             @foreach ($equipments as $equipment)
-         <br>
-         <center>
-        Nome do Equipamento:{{ $equipment->name }}<br>
-        Descrição do Equipamento:{{ $equipment->description }}<br>
-         <br>
-        <a href="{{route('equipments.edit',$equipment->id)}}"><button type="submit" class="btn btn-primary">Editar</button></a>
-       <div>
-       <form method="POST" action="{{route('equipments.destroy',$equipment->id)}}">
-        {{ csrf_field() }}
-        {{ method_field('DELETE') }}
+                <br>
+                <center>
+                    Nome do Equipamento:{{ $equipment->name }}<br>
+                    Tipo de Equipamento:{{ $equipment->equipment_type->name }}<br>
+                    Quantidade de Equipamentos:{{ $equipment->description }}<br>
+                    <br>
+                    <a href="{{ route('equipments.edit', $equipment->id) }}"><button type="submit"
+                            class="btn btn-primary">Editar</button></a>
+                    <div>
+                        <form method="POST" action="{{ route('equipments.destroy', $equipment->id) }}">
+                            {{ csrf_field() }}
+                            {{ method_field('DELETE') }}
 
-        <div class="form-group">
-        <input type="submit" class="btn btn-danger delete-user" value="DELETAR">
-        </div>
-    </form>
-       </div>
+                            <div class="form-group">
+                                <input type="submit" class="btn btn-danger delete-user" value="DELETAR">
+                            </div>
+                        </form>
+                    </div>
 
     </body>
     </ul>

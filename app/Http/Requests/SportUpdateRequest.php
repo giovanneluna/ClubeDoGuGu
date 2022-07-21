@@ -2,9 +2,10 @@
 
 namespace App\Http\Requests;
 
+use app\Models\Sport;
 use Illuminate\Foundation\Http\FormRequest;
 
-class EquipmentUpdateRequest extends FormRequest
+class SportUpdateRequest extends FormRequest
 {
 
     /**
@@ -18,14 +19,6 @@ class EquipmentUpdateRequest extends FormRequest
             'name' => [
                 'required',
             ],
-            'description' => [
-                'required',
-            ],
-            'equipment_type_id' => [
-                'required',
-            ],
-
-
         ];
     }
 }

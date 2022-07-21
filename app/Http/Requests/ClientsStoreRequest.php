@@ -21,18 +21,20 @@ class ClientsStoreRequest extends FormRequest
             ],
             'email' => [
                 'required',
+                'unique:clients,email'
             ],
             'cpf' => [
                 'required',
+                'unique:clients,cpf'
             ],
             'telephone' => [
-                'nullable',
+                'required',
             ],
             'age' => [
-                'nullable',
+                'required',
             ],
             'address' => [
-                'nullable',
+                'required',
             ],
         ];
     }

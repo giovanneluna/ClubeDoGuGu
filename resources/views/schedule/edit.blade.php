@@ -31,13 +31,13 @@
                     <form class="row g-3">
                         <div class="col-md-4">
                             <label>Horario de Inicio</label>
-                            <input name="start_time" type="time"
+                            <input name="start_time" type="text"
                                 class="form-control"value="{{ $schedule->start_time }}">
                         </div>
                         <form class="row g-3">
                             <div class="col-md-4">
                                 <label>Horario de Termino</label>
-                                <input name="end_time" type="time"
+                                <input name="end_time" type="text"
                                     class="form-control"value="{{ $schedule->end_time }}">
                             </div>
                             <form class="row g-3">

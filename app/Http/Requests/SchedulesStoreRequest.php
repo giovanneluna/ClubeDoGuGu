@@ -31,6 +31,7 @@ class SchedulesStoreRequest extends FormRequest
             'paid_out' => [
                 'required',
             ]
+
         ];
     }
 }

@@ -3,7 +3,7 @@
     <head>
         <div class="p-3 mb-2 bg-dark text-white">
             <center>
-                <h2>Esportes Cadastrados no Clube</h2>
+                <h2>Quadras Cadastradas no Clube</h2>
             </center>
             <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
                 integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
@@ -11,6 +11,8 @@
     </head>
 
     <body>
+        <center><a href="blocks/create" button type="submit" class="btn btn-primary">Cadastrar
+                Quadra</button></a></center>
 
         <ul>
             @foreach ($blocks as $block)
@@ -20,10 +22,11 @@
                     Localização:{{ $block->local }}<br>
                     Quantidade de Jogadores Dentro da Quadra:{{ $block->amount }}<br>
                     Tamanho da Arquibancada:{{ $block->public_amount }}<br>
-                    Tempo Maximo:{{ $block->max_time }}<br>
+                    Tempo Maximo(Horas):{{ $block->max_time }}<br>
                     Preço:{{ $block->price }}<br>
                     Disponivel:{{ $block->is_available }}<br>
-                    <a href="{{ route('blocks.edit', $block->id) }}"><button type="submit" class="btn btn-primary">Editar</button></a>
+                    <a href="{{ route('blocks.edit', $block->id) }}"><button type="submit"
+                            class="btn btn-primary">Editar</button></a>
                     <div>
                         <form method="POST" action="{{ route('blocks.destroy', $block->id) }}">
                             {{ csrf_field() }}

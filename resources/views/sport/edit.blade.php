@@ -1,23 +1,27 @@
 <x-app-layout>
-
     <!DOCTYPE html>
     <html lang="pt-br">
 
     <head>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
             integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
+        </script>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Editar Esporte</title>
+        <title>Editor de Esporte</title>
     </head>
+
+
 
     <body>
         @foreach ($errors->all() as $error)
             <span>{{ $error }}</span>
         @endforeach
         <center>
-            <h1>Editar Esporte</h1>
+            <h1>Editar dados do Esporte</h1>
         </center><br>
         <form action="{{ route('sports.update', $sport->id) }}" method="POST">
             @csrf
@@ -25,40 +29,25 @@
             <center>
                 <form class="row g-3">
                     <div class="col-md-4">
-                        <label>Tempo de Jogo (Horas)</label>
-                        <input name="time" type="text" class="form-control"value="{{ $sport->time }}">
+                        <label>Esporte</label>
+                        <input name="name" type="text" class="form-control"value="{{ $sport->name }}">
                     </div>
                     <form class="row g-3">
                         <div class="col-md-4">
-                            <label>Quadras</label>
-                            <select class="form-select" name="block_id">
-                                @foreach ($blocks as $block)
-                                    <option value="{{ $block->id }}"> {{ $block->block_type }}
-                                    </option>
+                            <label>Equipamento</label>
+                            <select class="form-select" name="equipments_id">
+                                @foreach ($equipments as $equipment)
+                                    <option value="{{ $equipment->id }}"> {{ $equipment->name }} </option>
                                 @endforeach
                             </select>
 
                         </div>
-                        <form class="row g-3">
-                            <div class="col-md-4">
-                                <label>Horario de Termino</label>
-                                <input name="end_time" type="time"
-                                    class="form-control"value="{{ $sport->end_time }}">
-                            </div>
-                            <form class="row g-3">
-                                <div class="col-md-4">
-                                    <label>Quadras</label>
-                                    <select class="form-select" name="block_id">
-                                        @foreach ($blocks as $block)
-                                            <option value="{{ $block->id }}"> {{ $block->block_type }}
-                                            </option>
-                                        @endforeach
-                                    </select>
 
-                                </div>
-                                <button type="submit" class="btn btn-primary">Criar</button>
-                            </form>
+                        <button type="submit" class="btn btn-primary">Editar</button>
+                    </form>
     </body>
 
     </html>
+
+    </form>
 </x-app-layout>

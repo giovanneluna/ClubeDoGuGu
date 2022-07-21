@@ -3,7 +3,7 @@
     <head>
         <div class="p-3 mb-2 bg-dark text-white">
             <center>
-                <h2>Esportes Cadastrados no Clube</h2>
+                <h2>Agendamentos Cadastrados no Clube</h2>
             </center>
             <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
                 integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
@@ -11,7 +11,8 @@
     </head>
 
     <body>
-
+        <center><a href="schedules/create" button type="submit" class="btn btn-primary">Cadastrar
+                Agendamento</button></a></center>
         <ul>
             @foreach ($schedules as $schedule)
                 <br>
@@ -19,7 +20,8 @@
                     Quadra:{{ $schedule->block->block_type }}<br>
                     Horario de Inicio:{{ $schedule->start_time }}<br>
                     Horario do Término:{{ $schedule->end_time }}<br>
-                    Tempo de Jogo:{{ $schedule->time }}<br>
+                    Tempo de Jogo(Horas):{{ $schedule->time }}<br>
+                    Valor do Agendamento:R${{ $schedule->total_price }}<br>
                     Pago?:{{ $schedule->paid_out }}<br>
                     <br>
                     <a href="{{ route('schedules.edit', $schedule->id) }}"><button type="submit"
