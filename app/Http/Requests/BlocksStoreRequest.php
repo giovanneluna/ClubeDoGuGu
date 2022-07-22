@@ -25,9 +25,6 @@ class BlocksStoreRequest extends FormRequest
             'is_available' => [
                 'required'
             ],
-            'max_time' => [
-                'required'
-            ],
             'price' => [
                 'required',
             ],
@@ -36,7 +33,8 @@ class BlocksStoreRequest extends FormRequest
             ],
             'local' => [
                 'required',
-            ]
+            ],
+
         ];
     }
 }

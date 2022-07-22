@@ -38,6 +38,6 @@ Route::middleware([
     Route::resource('equipments', EquipmentsController::class);
     Route::resource('stock', StockEquipmentsController::class);
     Route::resource('blocks', BlocksController::class);
-    Route::resource('schedules', SchedulesController::class);
-    Route::resource('records', RecordsController::class);
+    Route::get('blocks/{id}/schedules', [SchedulesController::class, 'create']);
+    Route::resource('schedules', SchedulesController::class)->except('create');
 });

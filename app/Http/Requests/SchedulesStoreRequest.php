@@ -19,11 +19,8 @@ class SchedulesStoreRequest extends FormRequest
             'time' => [
                 'required',
             ],
-            'start_time' => [
-                'required'
-            ],
-            'end_time' => [
-                'required'
+            'date' => [
+                'required',
             ],
             'total_price' => [
                 'required'

@@ -2,6 +2,8 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -405,6 +407,9 @@
 </head>
 
 <body class="antialiased">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous">
+    </script>
     <div
         class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-800 sm:items-center py-4 sm:pt-0">
         @if (Route::has('login'))
@@ -426,21 +431,87 @@
                     <div class=" min-h-screen">
 
                         <center>
-                            <h1 class="justify-center items-top">Bem-Vindo ao Clube do Gugu</h1>
+
                         </center>
-                        <h3>Somos o melhor clube de Bocaiuva e Região.
-                            Possuimos Inumeras Quadras de Varios Esportes Diferentes.
-                            Tem Interesse?
-                            Crie uma conta e veja todos os recursos do Nosso Clube.</h3>
-                        <center>
-                            <h1>Registre-se para poder ter acesso ao clube.</h1>
-                        </center>
+                        <h3>
+                            <center>
+                                <br><br><br><br><br><br>
+                                <div class="card-group">
+                                    <div class="card">
+                                        <img src="..." class="card-img-top" alt="...">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Card title</h5>
+                                            <p class="card-text">This is a wider card with supporting text below as a
+                                                natural lead-in to additional content. This content is a little bit
+                                                longer.</p>
+                                            <p class="card-text"><small class="text-muted">Last updated 3 mins
+                                                    ago</small></p>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <img src="https://clubebh.com.br/site/wp-content/uploads/2021/05/reabertura-maio-1024x536.jpg"
+                                            class="card-img-top" alt="...">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Clube do Gugu</h5>
+                                            <p class="card-text">Sistema de Dados do Clube </p>
+                                            <p class="card-text"><small class="text-muted">Registre para Ter
+                                                    Acesso</small></p>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <img src="..." class="card-img-top" alt="...">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Card title</h5>
+                                            <p class="card-text">This is a wider card with supporting text below as a
+                                                natural lead-in to additional content. This card has even longer content
+                                                than the first to show that equal height action.</p>
+                                            <p class="card-text"><small class="text-muted">Last updated 3 mins
+                                                    ago</small></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </center>
                     </div>
         @endif
     </div>
     </div>
     </div>
     <div>
+    </div>
+    <div class="container text-center">
+        <div class="row align-items-start">
+            <div class="col">
+                One of three columns
+            </div>
+            <div class="col">
+                One of three columns
+            </div>
+            <div class="col">
+                One of three columns
+            </div>
+        </div>
+        <div class="row align-items-center">
+            <div class="col">
+                One of three columns
+            </div>
+            <div class="col">
+                One of three columns
+            </div>
+            <div class="col">
+                One of three columns
+            </div>
+        </div>
+        <div class="row align-items-end">
+            <div class="col">
+                One of three columns
+            </div>
+            <div class="col">
+                One of three columns
+            </div>
+            <div class="col">
+                One of three columns
+            </div>
+        </div>
     </div>
 </body>
 

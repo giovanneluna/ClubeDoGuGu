@@ -22,7 +22,6 @@ return new class extends Migration
             $table->float('price');
             $table->integer('public_amount');
             $table->boolean('is_available');
-            $table->integer('max_time');
             $table->string('local');
             $table->integer('amount');
 

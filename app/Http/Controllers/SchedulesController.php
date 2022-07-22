@@ -16,6 +16,8 @@ class SchedulesController extends Controller
      */
     public function index()
     {
+
+
         $schedules = Schedule::get();
         return view('schedule.index', compact('schedules'));
     }
@@ -25,7 +27,7 @@ class SchedulesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Block $blocks)
     {
         $blocks = Block::all();
         return view('schedule.create', compact('blocks'));

@@ -17,6 +17,7 @@ class BlocksController extends Controller
      */
     public function index()
     {
+
         $sports = Sport::all();
         $blocks = Block::get();
         return view('block.index', compact('blocks', 'sports'));
@@ -95,6 +96,7 @@ class BlocksController extends Controller
      */
     public function destroy(Block $block)
     {
+
         $block->delete();
         return redirect()->route('blocks.index');
     }

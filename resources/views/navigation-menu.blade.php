@@ -18,27 +18,27 @@
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-jet-nav-link href="{{ route('sports.index') }}" :active="request()->routeIs('dashboard')">
-                        {{ __('Criar Esporte') }}
+                        {{ __('Esporte') }}
                     </x-jet-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-jet-nav-link href="{{ route('blocks.index') }}" :active="request()->routeIs('dashboard')">
-                        {{ __('Criar Quadra') }}
+                        {{ __('Quadra') }}
                     </x-jet-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('schedules.index') }}" :active="request()->routeIs('dashboard')">
-                        {{ __('Criar Agendamento') }}
+                    <x-jet-nav-link href="{{ route('blocks.index') }}" :active="request()->routeIs('dashboard')">
+                        {{ __('Agendamento') }}
                     </x-jet-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-jet-nav-link href="{{ route('clients.index') }}" :active="request()->routeIs('dashboard')">
-                        {{ __('Cadastrar Cliente') }}
+                        {{ __('Cliente') }}
                     </x-jet-nav-link>
                 </div>
                 <li class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-jet-nav-link href="{{ route('equipments.index') }}" :active="request()->routeIs('dashboard')">
-                        {{ __('Criar Equipamentos') }}
+                        {{ __('Equipamentos') }}
                     </x-jet-nav-link>
 
 
@@ -109,8 +109,7 @@
                                 <button
                                     class="flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300 transition">
                                     <img class="h-8 w-8 rounded-full object-cover"
-                                        src="{{ Auth::user()->profile_photo_url }}"
-                                        alt="{{ Auth::user()->name }}" />
+                                        src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
                                 </button>
                             @else
                                 <span class="inline-flex rounded-md">

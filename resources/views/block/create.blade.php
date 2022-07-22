@@ -13,9 +13,16 @@
     </head>
 
     <body>
-        @foreach ($errors->all() as $error)
-            <span>{{ $error }}</span>
-        @endforeach
+        @if ($errors->any())
+
+
+            <div class="alert alert-danger">
+                @foreach ($errors->all() as $error)
+                    <li><span>{{ $error }}</span></li>
+                @endforeach
+                </ul>
+            </div>
+        @endif
         <center>
             <H1>Cadastrar Quadra</H1>
         </center><br>
@@ -41,15 +48,6 @@
                                     class="form-control"value="{{ old('public_amount') }}">
                             </div>
                             <form class="row g-3">
-                                <div class="col-md-3">
-                                    <label>Horas Maximas de Jogo</label>
-                                    <select class="form-select" name="max_time">
-                                        <option selected disabled value=""></option>
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                    </select>
-                                </div>
                                 <form class="row g-3">
                                     <div class="col-md-4">
                                         <label>Localização</label>

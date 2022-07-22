@@ -13,9 +13,16 @@
     </head>
 
     <body>
-        @foreach ($errors->all() as $error)
-            <span>{{ $error }}</span>
-        @endforeach
+        @if ($errors->any())
+
+
+            <div class="alert alert-danger">
+                @foreach ($errors->all() as $error)
+                    <li><span>{{ $error }}</span></li>
+                @endforeach
+                </ul>
+            </div>
+        @endif
         <center>
             <h1>Cadastrar Equipamento</h1>
         </center> <br>

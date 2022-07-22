@@ -15,5 +15,6 @@ class EquipmentTypeSeeder extends Seeder
         EquipmentType::firstOrCreate(['id' => 3], ['name' => 'Basquete']);
         EquipmentType::firstOrCreate(['id' => 4], ['name' => 'Peteca']);
         EquipmentType::firstOrCreate(['id' => 5], ['name' => 'Badminton']);
+        EquipmentType::firstOrCreate(['id' => 6], ['name' => 'GuguBall']);
     }
 }

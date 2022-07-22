@@ -17,9 +17,16 @@
 
 
     <body>
-        @foreach ($errors->all() as $error)
-            <span>{{ $error }}</span>
-        @endforeach
+        @if ($errors->any())
+
+
+            <div class="alert alert-danger">
+                @foreach ($errors->all() as $error)
+                    <li><span>{{ $error }}</span></li>
+                @endforeach
+                </ul>
+            </div>
+        @endif
         <center>
             <h1>Cadastro de Esporte</h1>
         </center><br>

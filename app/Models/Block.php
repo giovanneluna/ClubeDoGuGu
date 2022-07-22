@@ -31,7 +31,6 @@ class Block extends Model
         'amount',
         'public_amount',
         'is_available',
-        'max_time',
         'local',
     ];
 }

@@ -153,6 +153,11 @@ return [
             'rule-name' => 'custom-message',
         ],
     ],
+    'block_type' => [
+        'block_type' => [
+            'block_type' => 'custom-message',
+        ],
+    ],
 
     /*
     |--------------------------------------------------------------------------
