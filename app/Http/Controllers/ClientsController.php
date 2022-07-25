@@ -14,10 +14,22 @@ class ClientsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $clients = Client::get();
-        return view('client.index', compact('clients'));
+
+        $search = $request->search;
+        $clients = Client::where(function ($query) use ($search) {
+            if ($search) {
+                $query->where('email', $search);
+                $query->orWhere('name', 'LIKE', "%{$search}%");
+                $query->orWhere('email', 'LIKE', "%{$search}%");
+                $query->orWhere('address', 'LIKE', "%{$search}%");
+                $query->orWhere('telephone', 'LIKE', "%{$search}%");
+                $query->orWhere('cpf', 'LIKE', "%{$search}%");
+            }
+        })->paginate(2);
+
+        return view('client.index', compact('clients'),);
     }
 
     /**

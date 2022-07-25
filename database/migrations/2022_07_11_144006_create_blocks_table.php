@@ -20,11 +20,11 @@ return new class extends Migration
             // 'snick_case'
             // 'PascalCase'
             $table->float('price');
+            $table->foreignId('sport_id')->constrained('sports');
             $table->integer('public_amount');
             $table->boolean('is_available');
             $table->string('local');
             $table->integer('amount');
-
             $table->timestamps();
         });
     }

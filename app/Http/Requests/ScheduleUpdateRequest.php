@@ -5,7 +5,7 @@ namespace App\Http\Requests;
 use App\Models\Schedule;
 use Illuminate\Foundation\Http\FormRequest;
 
-class SchedulesStoreRequest extends FormRequest
+class ScheduleUpdateRequest extends FormRequest
 {
 
     /**
@@ -19,10 +19,10 @@ class SchedulesStoreRequest extends FormRequest
             'time' => [
                 'required',
             ],
-            'start_time' => [
+            'date' => [
                 'required'
             ],
-            'end_time' => [
+            'block_id' => [
                 'required'
             ],
             'total_price' => [

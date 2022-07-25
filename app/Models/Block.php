@@ -18,12 +18,12 @@ class Block extends Model
 
     public function schedule()
     {
-        return $this->hasOne(Schedule::class);
+        return $this->hasOne(Schedule::class, 'schedule_id');
     }
 
     public function sport()
     {
-        return $this->hasMany(Sport::class);
+        return $this->belongsToMany(Sport::class, 'sport_id');
     }
     protected $fillable  = [
         'block_type',
@@ -31,6 +31,7 @@ class Block extends Model
         'amount',
         'public_amount',
         'is_available',
+        'sport_id',
         'local',
     ];
 }

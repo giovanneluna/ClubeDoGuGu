@@ -31,9 +31,10 @@
             <center>
                 <form class="row g-3">
                     <div class="col-md-4">
-                        <label>Quadras</label>
+                        <label>Quadra</label>
                         <select class="form-select" name="block_id">
                             @foreach ($blocks as $block)
+                                <option selected disabled value=""></option>
                                 <option value="{{ $block->id }}"> {{ $block->block_type }}
                                 </option>
                             @endforeach

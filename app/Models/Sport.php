@@ -16,11 +16,12 @@ class Sport extends Model
         'name',
         'equipments_id',
         'equipment_quantity',
+        'sports_id',
     ];
 
     public function block()
     {
-        return $this->belongsTo(Block::class);
+        return $this->hasMany(Block::class, 'block_id');
     }
 
     public function equipment_stock()

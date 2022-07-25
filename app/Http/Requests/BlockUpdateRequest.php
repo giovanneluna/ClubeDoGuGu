@@ -26,9 +26,7 @@ class BlockUpdateRequest extends FormRequest
             'is_available' => [
                 'required'
             ],
-            'max_time' => [
-                'required'
-            ],
+
             'price' => [
                 'required',
             ],

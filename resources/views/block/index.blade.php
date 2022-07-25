@@ -22,15 +22,14 @@
                     Localização:{{ $block->local }}<br>
                     Quantidade de Jogadores Dentro da Quadra:{{ $block->amount }}<br>
                     Tamanho da Arquibancada:{{ $block->public_amount }}<br>
-                    Tempo Maximo(Horas):{{ $block->max_time }}<br>
                     Preço:{{ $block->price }}<br>
                     Disponivel:{{ $block->is_available }}<br>
                     <a href="{{ route('blocks.edit', $block->id) }}"><button type="submit"
                             class="btn btn-primary">Editar</button></a>
                     <div class="modal-body">
-                        <p><a href="blocks/{id}/schedules" role="button" class="btn btn-secondary"
-                                data-bs-toggle="popover" title="Popover title"
-                                data-bs-content="Popover body content is set in this attribute.">Agendar</a></p>
+                        <p><a href="blocks/{{ $block->id }}/schedules" type="submit"
+                                class="btn btn-secondary">Agendar</a>
+                        </p>
                         <hr>
                     </div>
                     <div>

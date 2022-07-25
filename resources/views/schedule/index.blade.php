@@ -11,21 +11,24 @@
     </head>
 
     <body>
-        <center><a href="schedules/create" button type="submit" class="btn btn-primary">Cadastrar
-                Agendamento</button></a></center>
+        <center><a href="blocks" button type="submit" class="btn btn-primary">Voltar</button></a></center>
         <ul>
             @foreach ($schedules as $schedule)
                 <br>
                 <center>
-                    Quadra:{{ $schedule->block->block_type }}<br>
-                    Horario de Inicio:{{ $schedule->start_time }}<br>
-                    Horario do Término:{{ $schedule->end_time }}<br>
-                    Tempo de Jogo(Horas):{{ $schedule->time }}<br>
-                    Valor do Agendamento:R${{ $schedule->total_price }}<br>
+                    Quadra Agendada:{{ $schedule->block->block_type }}<br>
+                    Horario do Jogo:{{ $schedule->time }}<br>
+                    Preço:{{ $schedule->total_price }}<br>
                     Pago?:{{ $schedule->paid_out }}<br>
                     <br>
-                    <a href="{{ route('schedules.edit', $schedule->id) }}"><button type="submit"
-                            class="btn btn-primary">Editar</button></a>
+                    <form method="GET"action="{{ route('schedules.edit', $schedule->id) }}">
+                        <div class="form-group">
+                            {{ csrf_field() }}
+                            {{ method_field('EDIT') }}
+                            <input type="submit" class="btn btn-primary" value="Editar">
+                        </div>
+
+                    </form>
                     <div>
                         <form method="POST" action="{{ route('schedules.destroy', $schedule->id) }}">
                             {{ csrf_field() }}
@@ -35,6 +38,7 @@
                                 <input type="submit" class="btn btn-danger delete-user" value="DELETAR">
                             </div>
                 </center>
+                </form>
 
 
                 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"

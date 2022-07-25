@@ -35,6 +35,10 @@ class BlocksStoreRequest extends FormRequest
                 'required',
             ],
 
+            'sport_id' => [
+                'required',
+            ],
+
         ];
     }
 }

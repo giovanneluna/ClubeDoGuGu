@@ -33,7 +33,8 @@
                 <form class="row g-3">
                     <div class="col-md-4">
                         <label>Equipamento</label>
-                        <input name="name" type="text" class="form-control"value="{{ $equipment->name }}">
+                        <input name="name" type="text" class="form-control"value="{{ $equipment->name }}"
+                            readonly="true">
                     </div>
                     <form class="row g-3">
                         <div class="col-md-4">
@@ -44,9 +45,10 @@
                         <form class="row g-3">
                             <div class="col-md-4">
                                 <label>Tipo de Equipamento</label>
-                                <select class="form-select" name="equipment_type_id">
+                                <select class="form-select" name="equipment_type_id" readonly="true">
                                     @foreach ($equipment_types as $equipment_type)
-                                        <option value="{{ $equipment_type->id }}"> {{ $equipment_type->name }}
+                                        <option readonly="true" value="{{ $equipment_type->id }}">
+                                            {{ $equipment_type->name }}
                                         </option>
                                     @endforeach
                                 </select>

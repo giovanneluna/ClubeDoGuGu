@@ -9,6 +9,8 @@ class Client extends Model
 {
     use HasFactory;
 
+
+
     public function schedules()
     {
         return $this->hasMany(Schedule::class);

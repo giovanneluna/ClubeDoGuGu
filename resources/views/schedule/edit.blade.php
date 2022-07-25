@@ -43,27 +43,26 @@
                     <form class="row g-3">
                         <div class="col-md-4">
                             <label for="start">Data</label>
-                            <input class="form-control" type="date" id="start" name="trip-start"
-                                value="{{ $schedule->total_price }}" value="2022-07-22" min="2022-01-01"
-                                max="2028-12-31">
+                            <input class="form-control" type="date" id="start" name="date"
+                                value="{{ $schedule->date }}" value="2022-07-22" min="2022-01-01" max="2028-12-31">
                         </div>
                         <form class="row g-3">
                             <div class="col-md-3">
                                 <label>Horas Maximas de Jogo</label>
-                                <select class="form-select" name="max_time" value="{{ $schedule->total_price }}">
+                                <select class="form-select" name="time" value="{{ $schedule->time }}">
                                     <option selected disabled value=""></option>
-                                    <option>07:00 - 08:00</option>
-                                    <option>08:00 - 09:00</option>
-                                    <option>09:00 - 10:00</option>
-                                    <option>10:00 - 11:00</option>
-                                    <option>11:00 - 12:00</option>
-                                    <option>12:00 - 13:00</option>
-                                    <option>13:00 - 14:00</option>
-                                    <option>14:00 - 15:00</option>
-                                    <option>15:00 - 16:00</option>
-                                    <option>16:00 - 17:00</option>
-                                    <option>17:00 - 18:00</option>
-                                    <option>18:00 - 19:00</option>
+                                    <option value="07:00">07:00 - 08:00</option>
+                                    <option value="08:00">08:00 - 09:00</option>
+                                    <option value="09:00">09:00 - 10:00</option>
+                                    <option value="10:00">10:00 - 11:00</option>
+                                    <option value="11:00">11:00 - 12:00</option>
+                                    <option value="12:00">12:00 - 13:00</option>
+                                    <option value="13:00">13:00 - 14:00</option>
+                                    <option value="14:00">14:00 - 15:00</option>
+                                    <option value="15:00">15:00 - 16:00</option>
+                                    <option value="16:00">16:00 - 17:00</option>
+                                    <option value="17:00">17:00 - 18:00</option>
+                                    <option value="18:00">18:00 - 19:00</option>
                                 </select>
                             </div>
                             <form class="row g-3">

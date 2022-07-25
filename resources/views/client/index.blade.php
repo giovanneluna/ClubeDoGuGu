@@ -3,6 +3,14 @@
     <head>
 
         <div class="p-3 mb-2 bg-dark text-white">
+            <h1>Buscar Cliente</h1>
+            <section class="section">
+                <form class="d-flex" role="Procurar" action="{{ route('clients.index') }}" method="GET">
+                    <input type="text" id="search" name="search" class="form-control me-2" type="search"
+                        placeholder="Pesquisar" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Procurar</button>
+            </section>
+            </form>
             <center>
                 <h2>Clientes Cadastrados no Clube</h2>
             </center>
@@ -12,6 +20,8 @@
     </head>
 
     <body>
+
+
         <center><a href="clients/create" button type="submit" class="btn btn-primary">Cadastrar
                 Cliente</button></a></center>
 
@@ -49,4 +59,9 @@
     </body>
     </ul>
     @endforeach
+    <center>
+        <div class="py-4">
+            {{ $clients->links() }}
+        </div>
+    </center>
 </x-app-layout>

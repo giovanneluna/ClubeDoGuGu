@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\SchedulesStoreRequest;
+use App\Http\Requests\SchedulesUpdateRequest;
+use App\Http\Requests\ScheduleUpdateRequest;
 use App\Models\Block;
 use App\Models\Schedule;
 use Illuminate\Http\Request;
@@ -29,6 +31,7 @@ class SchedulesController extends Controller
      */
     public function create(Block $blocks)
     {
+
         $blocks = Block::all();
         return view('schedule.create', compact('blocks'));
     }
@@ -81,7 +84,7 @@ class SchedulesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(SchedulesStoreRequest $request, Schedule $schedule)
+    public function update(ScheduleUpdateRequest $request, Schedule $schedule)
     {
         $blocks = Block::all();
         $schedule->update($request->validated());

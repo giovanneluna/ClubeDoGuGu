@@ -32,7 +32,8 @@
                 <form class="row g-3">
                     <div class="col-md-4">
                         <label>Tipo de Quadra</label>
-                        <input name="block_type" type="text" class="form-control"value="{{ $block->block_type }}">
+                        <input name="block_type" type="text"
+                            class="form-control"value="{{ $block->block_type }}"readonly="true">
                     </div>
                     <form class="row g-3">
                         <div class="col-md-4">
@@ -48,33 +49,23 @@
                             </div>
                             <form class="row g-3">
                                 <div class="col-md-4">
-                                    <label>Horas Maximas de Jogo</label>
-                                    <select class="form-select" name="max_time" value="{{ $block->max_time }}">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-
-                                    </select>
+                                    <label>Localização</label>
+                                    <input name="local" type="text"
+                                        class="form-control"value="{{ $block->local }}">
                                 </div>
                                 <form class="row g-3">
                                     <div class="col-md-4">
-                                        <label>Localização</label>
-                                        <input name="local" type="text"
-                                            class="form-control"value="{{ $block->local }}">
+                                        <label>Quantidade Total de Jogadores dentro da Quadra</label>
+                                        <input name="amount" type="text"
+                                            class="form-control"value="{{ $block->amount }}">
                                     </div>
                                     <form class="row g-3">
                                         <div class="col-md-4">
-                                            <label>Quantidade Total de Jogadores dentro da Quadra</label>
-                                            <input name="amount" type="text"
-                                                class="form-control"value="{{ $block->amount }}">
+                                            <label>Preço da Quadra</label>
+                                            <input name="price" type="text"
+                                                class="form-control"value="{{ $block->price }}">
                                         </div>
-                                        <form class="row g-3">
-                                            <div class="col-md-4">
-                                                <label>Preço da Quadra</label>
-                                                <input name="price" type="text"
-                                                    class="form-control"value="{{ $block->price }}">
-                                            </div>
-                                            <button type="submit" class="btn btn-primary">Editar</button>
+                                        <button type="submit" class="btn btn-primary">Editar</button>
             </Center>
         </form>
     </body>
