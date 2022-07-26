@@ -6,6 +6,7 @@ use App\Http\Requests\SchedulesStoreRequest;
 use App\Http\Requests\SchedulesUpdateRequest;
 use App\Http\Requests\ScheduleUpdateRequest;
 use App\Models\Block;
+use App\Models\Client;
 use App\Models\Schedule;
 use Illuminate\Http\Request;
 
@@ -31,9 +32,9 @@ class SchedulesController extends Controller
      */
     public function create(Block $blocks)
     {
-
+        $clients = Client::all();
         $blocks = Block::all();
-        return view('schedule.create', compact('blocks'));
+        return view('schedule.create', compact('blocks', 'clients'));
     }
 
     /**
