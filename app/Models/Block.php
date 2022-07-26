@@ -27,7 +27,6 @@ class Block extends Model
     }
     protected $fillable  = [
         'block_type',
-        'price',
         'amount',
         'public_amount',
         'is_available',

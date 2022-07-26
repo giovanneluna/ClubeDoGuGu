@@ -32,7 +32,8 @@
                 <form class="row g-3">
                     <div class="col-md-4">
                         <label>Equipamento</label>
-                        <input name="name" type="text" class="form-control"value="{{ old('name') }}">
+                        <input name="name" placeholder="Ex:Bola" type="text"
+                            class="form-control"value="{{ old('name') }}">
                     </div>
                     <form class="row g-3">
                         <div class="col-md-4">

@@ -19,8 +19,7 @@ return new class extends Migration
             // 'camelCase'
             // 'snick_case'
             // 'PascalCase'
-            $table->float('price');
-            $table->foreignId('sport_id')->constrained('sports');
+            $table->foreignId('sport_id')->constrained('sports')->onDelete('CASCADE');
             $table->integer('public_amount');
             $table->boolean('is_available');
             $table->string('local');

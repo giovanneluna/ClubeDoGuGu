@@ -19,6 +19,15 @@ class SportUpdateRequest extends FormRequest
             'name' => [
                 'required',
             ],
+            'equipments_id' => [
+                'required'
+            ],
+        ];
+    }
+    public function messages()
+    {
+        return [
+            'name.required' => 'O nome é necessario.'
         ];
     }
 }

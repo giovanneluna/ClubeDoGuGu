@@ -11,7 +11,8 @@
     </head>
 
     <body>
-        <center><a href="blocks" button type="submit" class="btn btn-primary">Voltar</button></a></center>
+        <center><a href="{{ route('blocks.index') }}" button type="submit" class="btn btn-primary">Voltar</button></a>
+        </center>
         <ul>
             @foreach ($schedules as $schedule)
                 <br>

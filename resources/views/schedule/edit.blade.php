@@ -48,7 +48,7 @@
                         </div>
                         <form class="row g-3">
                             <div class="col-md-3">
-                                <label>Horas Maximas de Jogo</label>
+                                <label>Tempo de Jogo</label>
                                 <select class="form-select" name="time" value="{{ $schedule->time }}">
                                     <option selected disabled value=""></option>
                                     <option value="07:00">07:00 - 08:00</option>

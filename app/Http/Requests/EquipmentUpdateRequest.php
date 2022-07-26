@@ -17,15 +17,33 @@ class EquipmentUpdateRequest extends FormRequest
         return [
             'name' => [
                 'required',
+                'min:2'
             ],
             'description' => [
                 'required',
+                'numeric'
             ],
             'equipment_type_id' => [
                 'required',
             ],
 
 
+        ];
+    }
+
+
+    public function messages()
+    {
+        return [
+            //Name
+            'name.required' => 'É necessario informar a quantidade de equipamentos.',
+
+            //Description or Quantity
+            'description.required' => 'É necessario informar a quantidade de equipamentos.',
+            'description.numeric' => 'Letras não são aceitas (Quantidade para Criar).',
+
+            //EquipmentType
+            'equipment_type_id.required' => 'É necessario informar o tipo de equipamento.'
         ];
     }
 }

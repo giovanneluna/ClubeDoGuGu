@@ -59,13 +59,7 @@
                                         <input name="amount" type="text"
                                             class="form-control"value="{{ $block->amount }}">
                                     </div>
-                                    <form class="row g-3">
-                                        <div class="col-md-4">
-                                            <label>Preço da Quadra</label>
-                                            <input name="price" type="text"
-                                                class="form-control"value="{{ $block->price }}">
-                                        </div>
-                                        <button type="submit" class="btn btn-primary">Editar</button>
+                                    <button type="submit" class="btn btn-primary">Editar</button>
             </Center>
         </form>
     </body>

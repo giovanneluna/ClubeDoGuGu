@@ -19,6 +19,16 @@ class SportsStoreRequest extends FormRequest
             'name' => [
                 'required',
             ],
+            'equipments_id' => [
+                'required'
+            ]
+        ];
+    }
+    public function messages()
+    {
+        return [
+            'name.required' => 'O nome é necessario.',
+            'equipments_id.required' => 'O campo equipamento esta vazio.'
         ];
     }
 }

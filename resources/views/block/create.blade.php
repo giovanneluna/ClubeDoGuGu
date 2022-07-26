@@ -33,7 +33,8 @@
                 <form class="row g-3">
                     <div class="col-md-4">
                         <label>Tipo de Quadra</label>
-                        <input name="block_type" type="text" class="form-control"value="{{ old('block_type') }}">
+                        <input name="block_type" type="text" placeholder="Ex:QuadraA"
+                            class="form-control"value="{{ old('block_type') }}">
                     </div>
                     <form class="row g-3">
                         <div class="col-md-4">
@@ -52,6 +53,7 @@
                                     <div class="col-md-4">
                                         <label>Localização</label>
                                         <input name="local" type="text"
+                                            placeholder="Ex:A primeira direta da entrada do clube"
                                             class="form-control"value="{{ old('local') }}">
                                     </div>
                                     <form class="row g-3">
@@ -62,21 +64,15 @@
                                         </div>
                                         <form class="row g-3">
                                             <div class="col-md-4">
-                                                <label>Preço da Quadra</label>
-                                                <input name="price" type="text"
-                                                    class="form-control"value="{{ old('price') }}">
-                                            </div>
-                                            <form class="row g-3">
-                                                <div class="col-md-4">
-                                                    <label>Esporte</label>
-                                                    <select class="form-select" name="sport_id">
-                                                        @foreach ($sports as $sport)
-                                                            <option value="{{ $sport->id }}"> {{ $sport->name }}
-                                                            </option>
-                                                        @endforeach
-                                                    </select>
-                                            </form>
-                                            <button type="submit" class="btn btn-primary">Criar</button>
+                                                <label>Esporte</label>
+                                                <select class="form-select" name="sport_id">
+                                                    @foreach ($sports as $sport)
+                                                        <option value="{{ $sport->id }}"> {{ $sport->name }}
+                                                        </option>
+                                                    @endforeach
+                                                </select>
+                                        </form>
+                                        <button type="submit" class="btn btn-primary">Criar</button>
 
     </body>
 

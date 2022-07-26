@@ -33,14 +33,12 @@
                 <form class="row g-3">
                     <div class="col-md-4">
                         <label>Nome do Cliente</label>
-                        <input name="name" type="text"
-                            placeholder="Ex:Gustavo"class="form-control"value="{{ old('name') }}">
+                        <input name="name" type="text" class="form-control"value="{{ old('name') }}">
                     </div>
                     <form class="row g-3">
                         <div class="col-md-4">
                             <label>Email</label>
-                            <input name="email" type="text"
-                                placeholder="Ex:Gustavoball@gmail.com"class="form-control"value="{{ old('email') }}">
+                            <input name="email" type="text" class="form-control"value="{{ old('email') }}">
                         </div>
                         <form class="row g-3">
                             <div class="col-md-4">
@@ -63,7 +61,7 @@
                                     <form class="row g-3">
                                         <div class="col-md-4">
                                             <label>Endereço</label>
-                                            <input name="address" type="text" placeholder="Ex:Rua Carmesin 51"
+                                            <input name="address" type="text"
                                                 class="form-control"value="{{ old('address') }}">
                                         </div>
                                         <br>

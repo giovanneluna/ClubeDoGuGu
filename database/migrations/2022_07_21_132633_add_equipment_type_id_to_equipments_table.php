@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::table('equipments', function (Blueprint $table) {
             if (!Schema::hasColumn('equipments', 'equipment_type_id')) {
-                $table->foreignId('equipment_type_id')->constrained();
+                $table->foreignId('equipment_type_id')->constrained()->onDelete('CASCADE');
             }
         });
     }

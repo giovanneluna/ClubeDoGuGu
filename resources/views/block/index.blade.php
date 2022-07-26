@@ -11,7 +11,7 @@
     </head>
 
     <body>
-        <center><a href="blocks/create" button type="submit" class="btn btn-primary">Cadastrar
+        <center><a href="blocks/create" button type="submit" class="btn btn-info">Cadastrar
                 Quadra</button></a></center>
 
         <ul>
@@ -22,15 +22,15 @@
                     Localização:{{ $block->local }}<br>
                     Quantidade de Jogadores Dentro da Quadra:{{ $block->amount }}<br>
                     Tamanho da Arquibancada:{{ $block->public_amount }}<br>
-                    Preço:{{ $block->price }}<br>
                     Disponivel:{{ $block->is_available }}<br>
                     <a href="{{ route('blocks.edit', $block->id) }}"><button type="submit"
                             class="btn btn-primary">Editar</button></a>
                     <div class="modal-body">
                         <p><a href="blocks/{{ $block->id }}/schedules" type="submit"
-                                class="btn btn-secondary">Agendar</a>
-                        </p>
-                        <hr>
+                                class="btn btn-success">Agendar</a><br>
+                            <a href="{{ route('schedules.index') }}"><button type="submit" class="btn btn-warning">Ver
+                                    Agendamentos</button></a>
+                            <hr>
                     </div>
                     <div>
                         <form method="POST" action="{{ route('blocks.destroy', $block->id) }}">
