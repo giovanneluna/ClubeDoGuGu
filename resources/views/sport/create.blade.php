@@ -38,19 +38,10 @@
                         <label>Esporte</label>
                         <input name="name" type="text" class="form-control"value="{{ old('name') }}">
                     </div>
-                    <form class="row g-3">
-                        <div class="col-md-4">
-                            <label>Equipamento</label>
-                            <select class="form-select" name="equipments_id">
-                                @foreach ($equipments as $equipment)
-                                    <option value="{{ $equipment->id }}"> {{ $equipment->name }} </option>
-                                @endforeach
-                            </select>
-
-                        </div>
-
-                        <button type="submit" class="btn btn-primary">Criar</button>
-                    </form>
+                    <x-select :options="$equipments" class="form-control" name="equipments_id" valueField="name"
+                        label="Equipamento" />
+                    <button type="submit" class="btn btn-primary">Criar</button>
+                </form>
     </body>
 
     </html>

@@ -62,17 +62,10 @@
                                             <input name="amount" type="text"
                                                 class="form-control"value="{{ old('amount') }}">
                                         </div>
-                                        <form class="row g-3">
-                                            <div class="col-md-4">
-                                                <label>Esporte</label>
-                                                <select class="form-select" name="sport_id">
-                                                    @foreach ($sports as $sport)
-                                                        <option value="{{ $sport->id }}"> {{ $sport->name }}
-                                                        </option>
-                                                    @endforeach
-                                                </select>
-                                        </form>
-                                        <button type="submit" class="btn btn-primary">Criar</button>
+                                        <x-select :options="$sports" class="form-control" name="sport_id"
+                                            label="Esporte" />
+                                    </form>
+                                    <button type="submit" class="btn btn-primary">Criar</button>
 
     </body>
 

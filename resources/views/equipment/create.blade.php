@@ -29,22 +29,17 @@
         <form action="{{ route('equipments.store') }}" method="POST">
             @csrf
             <center>
-                <form class="row g-3">
+                <x-input name="name" placeholder="Ex:bola" type="text" label="Nome do Equipamento" />
+                <x-input name="description" type="text" label="Quantidade para Criar" />
+                {{-- <form class="row g-3">
                     <div class="col-md-4">
-                        <label>Equipamento</label>
-                        <input name="name" placeholder="Ex:Bola" type="text"
-                            class="form-control"value="{{ old('name') }}">
-                    </div>
-                    <form class="row g-3">
-                        <div class="col-md-4">
-                            <label>Quantidade Para Criar</label>
-                            <input name="description" type="text"
-                                class="form-control"value="{{ old('description') }}">
-                        </div>
-                        <x-select :options="$equipment_types" class="form-control" name="equipment_type_id" valueField="name"
-                            label="Tipo de Equipamento" />
-                        <br>
-                        <button type="submit" class="btn btn-primary">Criar</button>
+                        <label>Quantidade Para Criar</label>
+                        <input name="description" type="text" class="form-control"value="{{ old('description') }}">
+                    </div> --}}
+                <x-select :options="$equipment_types" class="form-control" name="equipment_type_id" valueField="name"
+                    label="Tipo de Equipamento" />
+                <br>
+                <button type="submit" class="btn btn-primary">Criar</button>
 
             </center>
         </form>

@@ -49,6 +49,8 @@
                             </select>
 
                         </div>
+                        <x-select :options="$equipments" class="form-control" name="equipments_id" valueField="name"
+                            label="Equipamento" />
 
                         <button type="submit" class="btn btn-primary">Editar</button>
                     </form>

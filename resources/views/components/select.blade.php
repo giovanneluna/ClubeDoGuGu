@@ -1,9 +1,9 @@
-@props(['valueField' => 'name', 'classCol' => 'col-md-4', 'name' => '', 'type' => 'text', 'label' => '', 'options' => [], 'placeholder' => 'Selecione uma opção.', 'id' => ''])
+@props(['value' => '', 'valueField' => 'name', 'classCol' => 'col-md-4', 'name' => '', 'type' => 'text', 'label' => '', 'options' => [], 'placeholder' => 'Selecione uma opção.', 'id' => ''])
 
 <div class="form-group {{ $classCol }}">
     <label for="{{ $name }}">{{ $label }}</label>
     <select {{ $attributes->merge(['class' => 'form-control', 'name' => $name, 'id' => $id, 'type' => $type]) }}>
-        <option selected disabled :placeholder="$placeholder"></option>
+        <option selected disabled :placeholder="$placeholder">{{ $value }}</option>
         @foreach ($options as $option)
             <option value="{{ $option->id }}">
                 {{ $option->$valueField }}

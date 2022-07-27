@@ -41,9 +41,11 @@
                             <label>Quantidade Para Criar</label>
                             <input name="description" type="text"
                                 class="form-control"value="{{ $equipment->description }}">
+                            {{-- @dd($equipment) --}}
                         </div>
                         <x-select :options="$equipment_types" class="form-control" name="equipment_type_id" valueField="name"
-                            label="Tipo de Equipamento" />
+                            label="Tipo de Equipamento"
+                            value="{{ $equipment->equipment_type->name ?? old('equipment_type_name') }}" />
                         <button type="submit" class="btn btn-primary">Editar</button>
                     </form>
                     <center>
