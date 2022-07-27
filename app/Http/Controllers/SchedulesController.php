@@ -20,9 +20,9 @@ class SchedulesController extends Controller
     public function index()
     {
 
-
+        $client = Client::get();
         $schedules = Schedule::get();
-        return view('schedule.index', compact('schedules'));
+        return view('schedule.index', compact('schedules', 'client'));
     }
 
     /**
@@ -30,11 +30,12 @@ class SchedulesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Block $blocks)
+    public function create(Block $block)
     {
         $clients = Client::all();
         $blocks = Block::all();
-        return view('schedule.create', compact('blocks', 'clients'));
+
+        return view('schedule.create', compact('blocks', 'clients', 'block'));
     }
 
     /**
@@ -46,10 +47,11 @@ class SchedulesController extends Controller
 
     public function store(SchedulesStoreRequest $request)
     {
+        $clients = Client::all();
         $blocks = Block::all();
         Schedule::create($request->all());
         $schedules = Schedule::get();
-        return redirect()->route('schedules.index', compact('schedules', 'blocks'));
+        return redirect()->route('schedules.index', compact('schedules', 'blocks', 'clients'));
     }
 
     /**
@@ -71,11 +73,12 @@ class SchedulesController extends Controller
      */
     public function edit($id)
     {
+        $clients = Client::all();
         $blocks = Block::all();
         if (!$schedule = Schedule::find($id))
             return redirect()->route('schedules.index');
 
-        return view('schedule.edit', compact('schedule', 'blocks'));
+        return view('schedule.edit', compact('schedule', 'blocks', 'clients'));
     }
 
     /**
@@ -87,9 +90,10 @@ class SchedulesController extends Controller
      */
     public function update(ScheduleUpdateRequest $request, Schedule $schedule)
     {
+        $clients = Client::all();
         $blocks = Block::all();
         $schedule->update($request->validated());
-        return redirect()->route('schedules.index', compact('blocks'));
+        return redirect()->route('schedules.index', compact('blocks', 'clients'));
     }
 
     /**

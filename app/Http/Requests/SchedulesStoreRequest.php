@@ -35,7 +35,9 @@ class SchedulesStoreRequest extends FormRequest
                 'required',
                 'numeric',
             ],
-
+            'client_id' => [
+                'required',
+            ],
 
         ];
     }
@@ -43,6 +45,9 @@ class SchedulesStoreRequest extends FormRequest
     public function messages()
     {
         return [
+            //CLientID
+            'client_id.required' => 'É necessario informar o nome do cliente.',
+
             //BlockId
             'block_id.required' => 'A quadra não foi informada.',
 

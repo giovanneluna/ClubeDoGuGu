@@ -9,22 +9,6 @@ class Block extends Model
 {
     use HasFactory;
 
-
-
-    public function stock_blocks()
-    {
-        return $this->hasMany(StockBlock::class);
-    }
-
-    public function schedules()
-    {
-        return $this->hasOne(Schedule::class, 'schedule_id');
-    }
-
-    public function sport()
-    {
-        return $this->belongsToMany(Sport::class, 'sport_id');
-    }
     protected $fillable  = [
         'block_type',
         'amount',
@@ -33,4 +17,20 @@ class Block extends Model
         'sport_id',
         'local',
     ];
+
+
+    public function stock_blocks()
+    {
+        return $this->hasMany(StockBlock::class);
+    }
+
+    public function schedule()
+    {
+        return $this->hasOne(Schedule::class, 'schedule_id');
+    }
+
+    public function sport()
+    {
+        return $this->belongsToMany(Sport::class, 'sport_id');
+    }
 }

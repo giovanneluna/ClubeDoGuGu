@@ -26,7 +26,7 @@ class Sport extends Model
 
     public function equipment_stock()
     {
-        return $this->belongsTo(EquipmentStock::class);
+        return $this->belongsTo(EquipmentStock::class, 'equipments_stock_id');
     }
 
     public function equipment()

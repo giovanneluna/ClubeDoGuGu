@@ -9,6 +9,12 @@ class EquipmentStock extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'equipment_id',
+        'quantity',
+
+    ];
+
     public function sport()
     {
         return $this->hasOne(Sport::class);
@@ -17,11 +23,4 @@ class EquipmentStock extends Model
     {
         return $this->belongsTo(Equipment::class);
     }
-
-
-    protected $fillable = [
-        'equipment_id',
-        'quantity',
-
-    ];
 }

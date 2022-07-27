@@ -42,19 +42,11 @@
                             <input name="description" type="text"
                                 class="form-control"value="{{ $equipment->description }}">
                         </div>
-                        <form class="row g-3">
-                            <div class="col-md-4">
-                                <label>Tipo de Equipamento</label>
-                                <select class="form-select" name="equipment_type_id" readonly="true">
-                                    @foreach ($equipment_types as $equipment_type)
-                                        <option readonly="true" value="{{ $equipment_type->id }}">
-                                            {{ $equipment_type->name }}
-                                        </option>
-                                    @endforeach
-                                </select>
-                                <button type="submit" class="btn btn-primary">Editar</button>
-                        </form>
-                        <center>
+                        <x-select :options="$equipment_types" class="form-control" name="equipment_type_id" valueField="name"
+                            label="Tipo de Equipamento" />
+                        <button type="submit" class="btn btn-primary">Editar</button>
+                    </form>
+                    <center>
     </body>
 
     </html>

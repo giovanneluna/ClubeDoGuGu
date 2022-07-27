@@ -32,7 +32,10 @@ class ScheduleUpdateRequest extends FormRequest
             'paid_out' => [
                 'required',
                 'numeric'
-            ]
+            ],
+            'client_id' => [
+                'required',
+            ],
         ];
     }
 

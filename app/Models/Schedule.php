@@ -9,15 +9,6 @@ class Schedule extends Model
 {
     use HasFactory;
 
-    public function block()
-    {
-        return $this->belongsTo(Block::class);
-    }
-    public function client()
-    {
-        return $this->hasMany(Client::class, 'client_id');
-    }
-
     protected $fillable = [
         'block_id',
         'client_id',
@@ -30,4 +21,13 @@ class Schedule extends Model
         'start_time' => 'date:hh:mm',
         'end_time' => 'date:hh:mm'
     ];
+
+    public function block()
+    {
+        return $this->belongsTo(Block::class);
+    }
+    public function client()
+    {
+        return $this->belongsTo(Client::class, 'client_id');
+    }
 }

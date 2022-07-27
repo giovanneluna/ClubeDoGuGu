@@ -45,9 +45,7 @@ class ClientsStoreRequest extends FormRequest
                 'required',
                 'min:5',
             ],
-            'client_id' => [
-                'required',
-            ],
+
         ];
     }
     public function messages()

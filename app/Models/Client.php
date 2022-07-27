@@ -9,18 +9,6 @@ class Client extends Model
 {
     use HasFactory;
 
-
-
-    public function schedule()
-    {
-        return $this->belongsTo(Schedule::class, 'schedule_id');
-    }
-
-    public function client()
-    {
-        return $this->belongsTo(Client::class);
-    }
-
     protected $fillable = [
         'name',
         'email',
@@ -30,4 +18,14 @@ class Client extends Model
         'address',
 
     ];
+
+    public function schedule()
+    {
+        return $this->hasMany(Schedule::class, 'schedule_id');
+    }
+
+    public function client()
+    {
+        return $this->belongsTo(Client::class);
+    }
 }
