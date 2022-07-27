@@ -16,7 +16,7 @@ class Block extends Model
         return $this->hasMany(StockBlock::class);
     }
 
-    public function schedule()
+    public function schedules()
     {
         return $this->hasOne(Schedule::class, 'schedule_id');
     }

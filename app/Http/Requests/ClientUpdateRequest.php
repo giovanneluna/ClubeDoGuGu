@@ -41,6 +41,9 @@ class ClientUpdateRequest extends FormRequest
                 'required',
                 'min:5',
             ],
+            'client_id' => [
+                'required',
+            ],
         ];
     }
 
