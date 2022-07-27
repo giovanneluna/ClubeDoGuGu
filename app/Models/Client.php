@@ -11,9 +11,9 @@ class Client extends Model
 
 
 
-    public function schedules()
+    public function schedule()
     {
-        return $this->hasMany(Schedule::class, 'schedule_id');
+        return $this->belongsTo(Schedule::class, 'schedule_id');
     }
 
     public function client()

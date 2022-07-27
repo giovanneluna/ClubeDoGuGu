@@ -21,7 +21,6 @@ return new class extends Migration
             $table->string('telephone');
             $table->tinyInteger('age');
             $table->char('address');
-            $table->foreignId('schedule_id')->constrained('schedules')->onDelete('CASCADE');
             $table->timestamps();
         });
     }
