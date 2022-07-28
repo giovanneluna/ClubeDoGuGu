@@ -30,48 +30,42 @@
                 <center>Cadastro do Cliente</center>
             </h1><br>
             <center>
-                <form class="row g-3">
-                    <div class="col-md-4">
-                        <label>Nome do Cliente</label>
-                        <input name="name" type="text"
-                            placeholder="Ex:Gustavo"class="form-control"value="{{ old('name') }}">
-                    </div>
-                    <form class="row g-3">
-                        <div class="col-md-4">
-                            <label>Email</label>
-                            <input name="email" type="text"
-                                placeholder="Ex:Gustavoball@gmail.com"class="form-control"value="{{ old('email') }}">
-                        </div>
-                        <form class="row g-3">
-                            <div class="col-md-4">
-                                <label>CPF</label>
-                                <input name="cpf" type="text" placeholder="Ex:12345678911"
-                                    class="form-control"value="{{ old('cpf') }}">
-                            </div>
-                            <form class="row g-3">
-                                <div class="col-md-4">
-                                    <label>Telefone</label>
-                                    <input name="telephone" type="text"placeholder="Ex:38998..."
-                                        class="form-control"value="{{ old('telephone') }}">
-                                </div>
-                                <form class="row g-3">
-                                    <div class="col-md-4">
-                                        <label>Idade</label>
-                                        <input name="age" type="text" placeholder="(Min:15)"
-                                            class="form-control"value="{{ old('age') }}">
-                                    </div>
-                                    <form class="row g-3">
-                                        <div class="col-md-4">
-                                            <label>Endereço</label>
-                                            <input name="address" type="text" placeholder="Ex:Rua Carmesin 51"
-                                                class="form-control"value="{{ old('address') }}">
-                                        </div>
-                                        <br>
-                                        <button type="submit" class="btn btn-primary">Cadastrar</button>
+                <x-input name="name" type="text" placeholder="Ex:Gustavo" label="Nome do Cliente"
+                    value="{{ old('name') }}" />
+                <x-input name="email" type="text" placeholder="Ex:gustavo@gmail.com" label="Email"
+                    value="{{ old('email') }}" />
+                <x-input name="cpf" type="text" placeholder="Ex:12345678911" label="CPF"
+                    value="{{ old('cpf') }}" />
+                <x-input name="telephone" type="text" placeholder="Ex:38998191556" label="Telefone"
+                    value="{{ old('telephone') }}" />
+                <x-input name="age" type="text" placeholder="Min:15" label="Idade"
+                    value="{{ old('age') }}" />
+                <x-input name="address" type="text" placeholder="Ex:Rua Santos Luiz 777" label="Endereço"
+                    value="{{ old('address') }}" />
+                <br>
+                <button type="submit" class="btn btn-primary">Cadastrar</button>
             </center>
         </form>
 
     </body>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     </html>
 </x-app-layout>

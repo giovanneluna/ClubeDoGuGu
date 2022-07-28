@@ -3,10 +3,16 @@
 <div class="form-group {{ $classCol }}">
     <label for="{{ $name }}">{{ $label }}</label>
     <select {{ $attributes->merge(['class' => 'form-control', 'name' => $name, 'id' => $id, 'type' => $type]) }}>
-        <option selected disabled :placeholder="$placeholder">{{ $value }}</option>
-        @foreach ($options as $option)
+        {{-- <option :placeholder="$placeholder"value="{{ $value }}">{{ $valueField }}</option> --}}
+
+        @foreach ($options as $key => $option)
+            @if ($value == $key)
+                <option selected value="{{ $option->id }}">
+                    {{ $option->name }}
+                </option>
+            @endif
             <option value="{{ $option->id }}">
-                {{ $option->$valueField }}
+                {{ $option->name }}
             </option>
         @endforeach
     </select>

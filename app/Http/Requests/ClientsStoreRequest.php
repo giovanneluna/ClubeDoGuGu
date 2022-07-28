@@ -52,6 +52,8 @@ class ClientsStoreRequest extends FormRequest
 
     {
         return [
+            //ClientId
+            'client_id.required' => 'teste',
             //Name
             'name.required' => 'É necessario informar o Nome do Cliente.',
             'name.min' => 'O numero minimo de letras do cliente é de 3.',

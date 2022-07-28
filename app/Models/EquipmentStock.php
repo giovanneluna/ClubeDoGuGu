@@ -10,7 +10,7 @@ class EquipmentStock extends Model
     use HasFactory;
 
     protected $fillable = [
-        'equipment_id',
+        'equipments_id',
         'quantity',
 
     ];
@@ -21,6 +21,6 @@ class EquipmentStock extends Model
     }
     public function equipment()
     {
-        return $this->belongsTo(Equipment::class);
+        return $this->belongsTo(Equipment::class, 'equipments_id');
     }
 }

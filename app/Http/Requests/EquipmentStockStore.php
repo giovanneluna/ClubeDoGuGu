@@ -16,7 +16,7 @@ class EquipmentStockStore extends FormRequest
     public function rules()
     {
         return [
-            'equipment_id' => [
+            'equipments_id' => [
                 'required',
             ],
             'quantity' => [

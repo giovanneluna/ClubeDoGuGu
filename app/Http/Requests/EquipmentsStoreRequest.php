@@ -36,6 +36,7 @@ class EquipmentsStoreRequest extends FormRequest
         return [
             //Name
             'name.required' => 'É necessario informar o nome do equipamento',
+            'name.unique' => 'Esse nome ja existe.',
 
             //Description or Quantity
             'description.required' => 'É necessario informar a quantidade de equipamentos.',

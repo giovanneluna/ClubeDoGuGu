@@ -30,25 +30,20 @@
             @csrf
             @method('PUT')
             <center>
+                <x-input name="name" type="text" disable="true" label="Nome do Equipamento"
+                    value="{{ $equipment->name ?? old('equipment_name') }}" />
                 <form class="row g-3">
                     <div class="col-md-4">
-                        <label>Equipamento</label>
-                        <input name="name" type="text" class="form-control"value="{{ $equipment->name }}"
-                            readonly="true">
+                        <label>Quantidade Para Criar</label>
+                        <input name="description" type="text"
+                            class="form-control"value="{{ $equipment->description }}">
                     </div>
-                    <form class="row g-3">
-                        <div class="col-md-4">
-                            <label>Quantidade Para Criar</label>
-                            <input name="description" type="text"
-                                class="form-control"value="{{ $equipment->description }}">
-                            {{-- @dd($equipment) --}}
-                        </div>
-                        <x-select :options="$equipment_types" class="form-control" name="equipment_type_id" valueField="name"
-                            label="Tipo de Equipamento"
-                            value="{{ $equipment->equipment_type->name ?? old('equipment_type_name') }}" />
-                        <button type="submit" class="btn btn-primary">Editar</button>
-                    </form>
-                    <center>
+                    <x-select :options="$equipment_types" class="form-control" name="equipment_type_id" valueField="name"
+                        label="Tipo de Equipamento"
+                        value="{{ $equipment->equipment_type->id ?? old('equipment_type_name') }}" />
+                    <button type="submit" class="btn btn-primary">Editar</button>
+                </form>
+                <center>
     </body>
 
     </html>

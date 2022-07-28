@@ -45,8 +45,7 @@ class SchedulesStoreRequest extends FormRequest
     public function messages()
     {
         return [
-            //CLientID
-            'client_id.required' => 'É necessario informar o nome do cliente.',
+
 
             //BlockId
             'block_id.required' => 'A quadra não foi informada.',
@@ -64,6 +63,9 @@ class SchedulesStoreRequest extends FormRequest
             //PaidOut
             'paid_out.required' => 'Não foi informado se foi pago',
             'paid_out.numeric' => 'Não foi informado se foi pago.(1 para Pago,0 para NãoPago)',
+
+            //ClientID
+            'client_id.required' => 'É necessario informar o cliente.',
 
         ];
     }

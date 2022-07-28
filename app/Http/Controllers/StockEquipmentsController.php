@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\EquipmentStockStore;
 use App\Models\Equipment;
 use App\Models\EquipmentStock;
 use Illuminate\Http\Request;
@@ -27,7 +28,8 @@ class StockEquipmentsController extends Controller
      */
     public function create()
     {
-        //
+        $equipments = Equipment::all();
+        return view('stock.create', compact('equipments'));
     }
 
     /**
@@ -36,9 +38,11 @@ class StockEquipmentsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(EquipmentStockStore $request)
     {
-        //
+
+        EquipmentStock::create($request->validated());
+        return redirect('equipment-stocks.index');
     }
 
     /**
@@ -58,9 +62,10 @@ class StockEquipmentsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(EquipmentStock $equipmentStock)
     {
-        //
+        $equipments = Equipment::all();
+        return view('stock.edit', compact('equipmentStock', 'equipments'));
     }
 
     /**
@@ -70,9 +75,10 @@ class StockEquipmentsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(EquipmentStockStore $request, EquipmentStock $equipmentStock)
     {
-        //
+        $equipmentStock->update($request->validated());
+        return redirect('equipment-stocks.index');
     }
 
     /**

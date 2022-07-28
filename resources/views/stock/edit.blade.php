@@ -9,7 +9,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Cadastro de Equipamento</title>
+        <title>Editar Estoque</title>
     </head>
 
     <body>
@@ -24,15 +24,16 @@
             </div>
         @endif
         <center>
-            <h1>Cadastrar Equipamento</h1>
+            <h1>Edição de Estoque</h1>
         </center> <br>
-        <form action="{{ route('equipments.store') }}" method="POST">
+        <form action="{{ route('equipment-stocks.update', $equipmentStock->id) }}" method="POST">
             @csrf
+            @method('PUT')
             <center>
-                <x-input name="name" placeholder="Ex:bola" type="text" label="Nome do Equipamento" />
-                <x-input name="description" type="text" label="Quantidade para Criar" />
-                <x-select :options="$equipment_types" class="form-control" name="equipment_type_id" valueField="name"
-                    label="Tipo de Equipamento" />
+                <x-input name="quantity" value="{{ $equipmentStock->quantity }}" type="number" label="Quantidade" />
+                <x-select :options="$equipments" class="form-control" name="equipments_id"
+                    valueField="{{ $equipmentStock->equipment->name }}" label="Quadra" />
+
                 <br>
                 <button type="submit" class="btn btn-primary">Criar</button>
 

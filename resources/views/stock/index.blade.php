@@ -13,16 +13,16 @@
     <body>
 
         <ul>
-            @foreach ($stock_equips as $stock_equip)
+            {{-- @foreach ($stock_equips as $stock_equip) --}}
+            <br>
+            <center>
+                Quantidade:
+                Nome do Equipamento:<br>
                 <br>
-                <center>
-                    Quantidade:{{ $stock_equip->quantity }}<br>
-                    Nome do Equipamento:{{ $stock_equip->equipment->name }}<br>
-                    <br>
-                    <a href="{{ route('stock/index', $equipment->id) }}"><button type="submit"
-                            class="btn btn-primary">Editar</button></a>
+                {{-- <a href="{{ route('stock/index', $equipment->id) }}"><button type="submit"
+                        class="btn btn-primary">Editar</button></a> --}}
 
     </body>
     </ul>
-    @endforeach
+    {{-- @endforeach --}}
 </x-app-layout>

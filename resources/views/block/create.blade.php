@@ -30,42 +30,19 @@
             @csrf
             <center>
 
-                <form class="row g-3">
-                    <div class="col-md-4">
-                        <label>Tipo de Quadra</label>
-                        <input name="block_type" type="text" placeholder="Ex:QuadraA"
-                            class="form-control"value="{{ old('block_type') }}">
-                    </div>
-                    <form class="row g-3">
-                        <div class="col-md-4">
-                            <label>Esta Disponivel</label>
-                            <input name="is_available" type="text"
-                                class="form-control"value="{{ old('is_available') }}">
-                        </div>
-                        <form class="row g-3">
-                            <div class="col-md-4">
-                                <label>Capacidade Total da Arquibancada</label>
-                                <input name="public_amount" type="text"
-                                    class="form-control"value="{{ old('public_amount') }}">
-                            </div>
-                            <form class="row g-3">
-                                <form class="row g-3">
-                                    <div class="col-md-4">
-                                        <label>Localização</label>
-                                        <input name="local" type="text"
-                                            placeholder="Ex:A primeira direta da entrada do clube"
-                                            class="form-control"value="{{ old('local') }}">
-                                    </div>
-                                    <form class="row g-3">
-                                        <div class="col-md-4">
-                                            <label>Quantidade Total de Jogadores dentro da Quadra</label>
-                                            <input name="amount" type="text"
-                                                class="form-control"value="{{ old('amount') }}">
-                                        </div>
-                                        <x-select :options="$sports" class="form-control" name="sport_id"
-                                            label="Esporte" />
-                                    </form>
-                                    <button type="submit" class="btn btn-primary">Criar</button>
+                <x-input name="block_type" placeholder="Ex:QuadraA" type="text" label="Tipo de Quadra"
+                    value="{{ old('block_type') }}" />
+                <x-input name="is_available" placeholder="1 ou 0" type="text" label="Esta Disponivel?"
+                    value="{{ old('is_available') }}" />
+                <x-input name="public_amount" type="text" label="Capacidade Total da Arquibancada"
+                    value="{{ old('public_amount') }}" />
+                <x-input name="local" type="text" label="Localização"
+                    placeholder="Ex:A primeira direta da entrada do clube" value="{{ old('local') }}" />
+                <x-input name="amount" type="text" label="Quantidade Total de Jogadores dentro da quadra"
+                    value="{{ old('amount') }}" />
+                <x-select :options="$sports" class="form-control" name="sport_id" label="Esporte" />
+        </form>
+        <button type="submit" class="btn btn-primary">Criar</button>
 
     </body>
 

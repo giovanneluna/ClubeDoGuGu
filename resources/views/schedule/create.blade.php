@@ -31,9 +31,12 @@
             <center>
 
 
-                <x-select :options="$clients" class="form-control" name="client_id" label="Nome do Cliente" />
+                <x-select :options="$clients" class="form-control" name="client_id" valueField="name"
+                    label="Nome do Cliente" />
+
                 <x-select :options="$blocks" class="form-control" name="block_id" valueField="block_type"
                     label="Quadra" />
+
                 <form class="row g-3">
                     <div class="col-md-4">
                         <label for="start">Data</label>
@@ -59,21 +62,13 @@
                                 <option value="18:00">18:00 - 19:00</option>
                             </select>
                         </div>
-                        <form class="row g-3">
-                            <div class="col-md-4">
-                                <label>Preço Total</label>
-                                <input name="total_price" type="text"
-                                    class="form-control"value="{{ old('total_price') }}">
-                            </div>
-                            <form class="row g-3">
-                                <div class="col-md-4">
-                                    <label>Pago?</label>
-                                    <input name="paid_out" type="text"
-                                        class="form-control"value="{{ old('paid_out') }}">
-                                </div>
+                        <x-input name="total_price" placeholder="Ex:bola" type="text" label="Preço Total"
+                            value="{{ old('total_price') }}" />
 
-                                <button type="submit" class="btn btn-primary">Criar</button>
-                            </form>
+                        <x-input name="paid_out" type="text" label="Pago?" value="{{ old('paid_out') }}" />
+
+                        <button type="submit" class="btn btn-primary">Criar</button>
+                    </form>
 
 
 

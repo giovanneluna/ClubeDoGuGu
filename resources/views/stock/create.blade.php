@@ -1,20 +1,16 @@
 <x-app-layout>
+
     <!DOCTYPE html>
     <html lang="pt-br">
 
     <head>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-            integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
-        </script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Cadastro de Esporte</title>
+        <title>Cadastro de Estoque</title>
     </head>
-
-
 
     <body>
         @if ($errors->any())
@@ -28,20 +24,22 @@
             </div>
         @endif
         <center>
-            <h1>Cadastro de Esporte</h1>
-        </center><br>
-        <form action="{{ route('sports.store') }}" method="POST">
+            <h1>Cadastro de Estoque</h1>
+        </center> <br>
+        <form action="{{ route('equipment-stocks.store') }}" method="POST">
             @csrf
             <center>
-                <x-input name="name" placeholder="Ex:Futebol" type="text" label="Esporte"
-                    value="{{ old('name') }}" />
+
+                <x-input name="quantity" type="number" label="Quantidade" />
                 <x-select :options="$equipments" class="form-control" name="equipments_id" valueField="name"
                     label="Equipamento" />
+
+                <br>
                 <button type="submit" class="btn btn-primary">Criar</button>
+
+            </center>
         </form>
     </body>
 
     </html>
-
-    </form>
 </x-app-layout>

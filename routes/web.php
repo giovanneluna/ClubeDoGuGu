@@ -36,7 +36,7 @@ Route::middleware([
     Route::resource('clients', ClientsController::class);
     Route::resource('sports', SportsController::class);
     Route::resource('equipments', EquipmentsController::class);
-    Route::resource('stock', StockEquipmentsController::class);
+    Route::resource('equipment-stocks', StockEquipmentsController::class);
     Route::resource('blocks', BlocksController::class);
     Route::get('blocks/{id}/schedules', [SchedulesController::class, 'create']);
     Route::resource('schedules', SchedulesController::class)->except('create');
