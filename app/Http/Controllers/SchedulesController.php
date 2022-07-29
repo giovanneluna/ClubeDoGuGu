@@ -53,7 +53,7 @@ class SchedulesController extends Controller
     public function store(SchedulesStoreRequest $request)
     {
         $formdata = $request->validated();
-        // dd($formdata);
+        $formdata['schedule_status_id'] = ScheduleStatus::first()->id;
         $equipmentsRemoved = app(RemoveEquipmentInStockService::class)->run($formdata['equipments_id'], $formdata['equipment_quantity']);
         if ($equipmentsRemoved == false) {
 

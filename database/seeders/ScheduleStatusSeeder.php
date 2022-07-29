@@ -10,8 +10,8 @@ class ScheduleStatusSeeder extends Seeder
 {
     public function run()
     {
-        ScheduleStatus::firstOrCreate(['id' => 1], ['name' => 'Agendado']);
-        ScheduleStatus::firstOrCreate(['id' => 2], ['name' => 'Cancelado']);
-        ScheduleStatus::firstOrCreate(['id' => 3], ['name' => 'Finalizado']);
+        ScheduleStatus::firstOrCreate(['id' => 1], ['status' => 'Agendado']);
+        ScheduleStatus::firstOrCreate(['id' => 2], ['status' => 'Cancelado']);
+        ScheduleStatus::firstOrCreate(['id' => 3], ['status' => 'Finalizado']);
     }
 }

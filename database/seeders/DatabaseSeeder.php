@@ -22,5 +22,7 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         $this->call(EquipmentTypeSeeder::class);
+
+        $this->call(ScheduleStatusSeeder::class);
     }
 }
