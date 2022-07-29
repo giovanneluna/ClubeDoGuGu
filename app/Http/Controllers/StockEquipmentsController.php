@@ -16,9 +16,9 @@ class StockEquipmentsController extends Controller
      */
     public function index()
     {
-        $equipments = Equipment::all();
-        $stock_equips = EquipmentStock::all();
-        return view('stock.index', compact('stock_equips', 'equipments'));
+        $equipment = Equipment::all();
+        $equipmentStocks = EquipmentStock::all();
+        return view('stock.index', compact('equipmentStocks', 'equipment'));
     }
 
     /**
@@ -42,7 +42,7 @@ class StockEquipmentsController extends Controller
     {
 
         EquipmentStock::create($request->validated());
-        return redirect('equipment-stocks.index');
+        return redirect('equipment-stocks');
     }
 
     /**
@@ -78,7 +78,7 @@ class StockEquipmentsController extends Controller
     public function update(EquipmentStockStore $request, EquipmentStock $equipmentStock)
     {
         $equipmentStock->update($request->validated());
-        return redirect('equipment-stocks.index');
+        return redirect('equipment-stocks');
     }
 
     /**

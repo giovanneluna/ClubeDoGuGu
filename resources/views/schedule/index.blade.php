@@ -27,8 +27,9 @@
                         <div class="form-group">
                             {{ csrf_field() }}
                             {{ method_field('EDIT') }}
-                            <input type="submit" class="btn btn-primary" value="Editar">
-                        </div>
+                            <div class="form-group">
+                                <input type="submit" class="btn btn-primary" value="Editar">
+                            </div>
 
                     </form>
                     <div>

@@ -38,54 +38,22 @@
                     Endereço:{{ $client->address }}<br>
                     <a href="{{ route('clients.edit', $client->id) }}"><button type="submit"
                             class="btn btn-primary">Editar</button></a>
-
                     <div>
                         <button type="button" class="btn btn-danger" data-bs-toggle="modal"
-                            data-bs-target="#modal-delete" id="{{ $client->id }}">Deletar
+                            data-bs-target="#exampleModal" data-id="{{ $client->id }}">Deletar
                         </button>
-                        <x-modal-delete client="$client" />
 
                     </div>
                     <hr>
                 </center>
-            @endforeach
 
 
-
-
-        </ul>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
-        </script>
-
-        <div class="modal fade text-dark" id="#modal-delete" tabindex="-1" aria-labelledby="exampleModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content ">
-                    <div class="modal-header bg-danger">
-                        <h5 class="modal-title " id="#modal-delete-label">Confirmação</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        Tem certeza que deseja excluir esse usuario?<li>
-                        </li>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <form data-bs-toggle="modal" data-bs-target="#modal-delete" method="POST"
-                            action="{{ route('clients.destroy', $client->id) }}">
-                            {{ csrf_field() }}
-                            {{ method_field('DELETE') }}
-                            <div class="form-group">
-                                <input type="submit" class="btn btn-danger delete-user" value="DELETAR">
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+                    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
+                </script>
 
     </body>
+    </ul>
 
 
     <center>
@@ -93,5 +61,38 @@
             {{ $clients->links() }}
         </div>
     </center>
-
+    <!-- Modal -->
+    <form data-bs-toggle="modal" data-bs-target="#exampleModal" method="POST"
+        action="{{ route('clients.destroy', $client->id) }}">
+        {{ csrf_field() }}
+        {{ method_field('DELETE') }}
+    </form>
+    <div class="modal fade text-dark" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content ">
+                <div class="modal-header bg-danger">
+                    <h5 class="modal-title " id="exampleModalLabel">Confirmação</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Tem certeza que deseja excluir esse usuario?<li>
+                        {{ $client->name }}
+                    </li>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <form data-bs-toggle="modal" data-bs-target="#exampleModal" method="POST"
+                        action="{{ route('clients.destroy', $client->id) }}">
+                        {{ csrf_field() }}
+                        {{ method_field('DELETE') }}
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-danger delete-user" value="DELETAR">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    @endforeach
 </x-app-layout>

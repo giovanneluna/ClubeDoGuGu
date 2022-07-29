@@ -7,7 +7,11 @@ use App\Http\Requests\SchedulesUpdateRequest;
 use App\Http\Requests\ScheduleUpdateRequest;
 use App\Models\Block;
 use App\Models\Client;
+use App\Models\Equipment;
 use App\Models\Schedule;
+use App\Models\ScheduleStatus;
+use App\Services\RemoveEquipmentInStockService;
+use Illuminate\Auth\Events\Validated;
 use Illuminate\Http\Request;
 
 class SchedulesController extends Controller
@@ -32,10 +36,11 @@ class SchedulesController extends Controller
      */
     public function create(Block $block)
     {
+        $equipments = Equipment::all();
         $clients = Client::all();
         $blocks = Block::all();
 
-        return view('schedule.create', compact('blocks', 'clients', 'block'));
+        return view('schedule.create', compact('blocks', 'clients', 'block', 'equipments'));
     }
 
     /**
@@ -47,11 +52,18 @@ class SchedulesController extends Controller
 
     public function store(SchedulesStoreRequest $request)
     {
-        $clients = Client::all();
-        $blocks = Block::all();
-        Schedule::create($request->all());
-        $schedules = Schedule::get();
-        return redirect()->route('schedules.index', compact('schedules', 'blocks', 'clients'));
+        $formdata = $request->validated();
+        // dd($formdata);
+        $equipmentsRemoved = app(RemoveEquipmentInStockService::class)->run($formdata['equipments_id'], $formdata['equipment_quantity']);
+        if ($equipmentsRemoved == false) {
+
+            return redirect()->back()->withErrors('Você não possui equipamentos disponiveis.');
+        }
+
+        Schedule::create($formdata);
+
+
+        return redirect()->route('schedules.index');
     }
 
     /**
@@ -73,12 +85,13 @@ class SchedulesController extends Controller
      */
     public function edit($id)
     {
+        $schedulesStatus = ScheduleStatus::all();
         $clients = Client::all();
         $blocks = Block::all();
         if (!$schedule = Schedule::find($id))
             return redirect()->route('schedules.index');
 
-        return view('schedule.edit', compact('schedule', 'blocks', 'clients'));
+        return view('schedule.edit', compact('schedule', 'blocks', 'clients', 'schedulesStatus'));
     }
 
     /**

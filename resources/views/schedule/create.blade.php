@@ -32,10 +32,10 @@
 
 
                 <x-select :options="$clients" class="form-control" name="client_id" valueField="name"
-                    label="Nome do Cliente" />
+                    label="Nome do Cliente" placeholder="Nome:" />
 
-                <x-select :options="$blocks" class="form-control" name="block_id" valueField="block_type"
-                    label="Quadra" />
+                <x-select :options="$blocks" class="form-control" name="block_id" valueField="block_type" label="Quadra"
+                    placeholder="Quadra:" />
 
                 <form class="row g-3">
                     <div class="col-md-4">
@@ -66,7 +66,10 @@
                             value="{{ old('total_price') }}" />
 
                         <x-input name="paid_out" type="text" label="Pago?" value="{{ old('paid_out') }}" />
-
+                        <x-input name="equipment_quantity" type="text" label="Quantidade de Equipamento"
+                            value="{{ old('total_price') }}" />
+                        <x-select :options="$equipments" class="form-control" name="equipments_id" valueField="name"
+                            label="Equipamentos" placeholder="Equipamentos:" />
                         <button type="submit" class="btn btn-primary">Criar</button>
                     </form>
 

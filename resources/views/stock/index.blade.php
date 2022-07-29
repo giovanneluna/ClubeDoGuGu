@@ -11,18 +11,22 @@
     </head>
 
     <body>
-
+        <center><a href="equipment-stocks/create" button type="submit" class="btn btn-primary">Cadastrar
+                Esporte </button></a></center>
         <ul>
-            {{-- @foreach ($stock_equips as $stock_equip) --}}
-            <br>
-            <center>
-                Quantidade:
-                Nome do Equipamento:<br>
+            @foreach ($equipmentStocks as $equipmentStock)
                 <br>
-                {{-- <a href="{{ route('stock/index', $equipment->id) }}"><button type="submit"
-                        class="btn btn-primary">Editar</button></a> --}}
+                <center>
+                    <li>
 
+                        Quantidade:{{ $equipmentStock->quantity }}<br>
+                        Equipamento:{{ $equipmentStock->equipment->name }}<br>
+
+                    </li>
+                    <br>
+                    <a class="btn btn-primary" href="{{ route('equipment-stocks.edit', $equipmentStock->id) }}">Editar</a>
+                </center>
+        </ul>
     </body>
-    </ul>
-    {{-- @endforeach --}}
+    @endforeach
 </x-app-layout>

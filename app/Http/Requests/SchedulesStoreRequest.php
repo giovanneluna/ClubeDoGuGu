@@ -38,6 +38,12 @@ class SchedulesStoreRequest extends FormRequest
             'client_id' => [
                 'required',
             ],
+            'equipment_quantity' => [
+                'required',
+            ],
+            'equipments_id' => [
+                'required',
+            ],
 
         ];
     }

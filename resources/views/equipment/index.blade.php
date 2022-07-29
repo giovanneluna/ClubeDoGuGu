@@ -19,7 +19,7 @@
                 <center>
                     Nome do Equipamento:{{ $equipment->name }}<br>
                     Tipo de Equipamento:{{ $equipment->equipment_type->name }}<br>
-                    Quantidade de Equipamentos:{{ $equipment->description }}<br>
+                    Descrioção de Equipamentos:{{ $equipment->description }}<br>
                     <br>
                     <a href="{{ route('equipments.edit', $equipment->id) }}"><button type="submit"
                             class="btn btn-primary">Editar</button></a>

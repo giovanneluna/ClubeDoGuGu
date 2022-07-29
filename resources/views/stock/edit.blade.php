@@ -31,11 +31,19 @@
             @method('PUT')
             <center>
                 <x-input name="quantity" value="{{ $equipmentStock->quantity }}" type="number" label="Quantidade" />
-                <x-select :options="$equipments" class="form-control" name="equipments_id"
-                    valueField="{{ $equipmentStock->equipment->name }}" label="Quadra" />
+                <form class="row g-3">
+                    <div class="col-md-4">
+                        <label>Equipamento</label>
+                        <select class="form-select" name="equipments_id">
+                            @foreach ($equipments as $equipment)
+                                <option value="{{ $equipment->id }}" @if ($equipment->id == $equipmentStock->equipments_id) selected @endif>
+                                    {{ $equipment->name }} </option>
+                            @endforeach
+                        </select>
+                    </div>
 
-                <br>
-                <button type="submit" class="btn btn-primary">Criar</button>
+                    <br>
+                    <button type="submit" class="btn btn-primary">Criar</button>
 
             </center>
         </form>

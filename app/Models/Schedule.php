@@ -16,6 +16,7 @@ class Schedule extends Model
         'date',
         'total_price',
         'paid_out',
+        'schedule_status_id',
     ];
     protected $casts = [
         'start_time' => 'date:hh:mm',
@@ -29,5 +30,9 @@ class Schedule extends Model
     public function client()
     {
         return $this->belongsTo(Client::class, 'client_id');
+    }
+    public function schedule_status()
+    {
+        return $this->belongsTo(ScheduleStatus::class, 'schedule_status_id');
     }
 }

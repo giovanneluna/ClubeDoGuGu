@@ -19,7 +19,7 @@ class Equipment extends Model
 
     public function equipment_stock()
     {
-        return $this->hasOne(EquipmentStock::class);
+        return $this->hasOne(EquipmentStock::class, 'equipments_id');
     }
 
     public function sport()

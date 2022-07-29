@@ -34,26 +34,20 @@
             @csrf
             @method('PUT')
             <center>
+                <x-input name="name" type="text" label="Esporte" value="{{ $sport->name ?? old('name') }}" />
+
                 <form class="row g-3">
                     <div class="col-md-4">
-                        <label>Esporte</label>
-                        <input name="name" type="text" class="form-control"value="{{ $sport->name }}">
+                        <label>Equipamento</label>
+                        <select class="form-select" name="equipments_id">
+                            @foreach ($equipments as $equipment)
+                                <option value="{{ $equipment->id }}" @if ($equipment->id == $sport->equipments_id) selected @endif>
+                                    {{ $equipment->name }} </option>
+                            @endforeach
+                        </select>
                     </div>
-                    <form class="row g-3">
-                        <div class="col-md-4">
-                            <label>Equipamento</label>
-                            <select class="form-select" name="equipments_id">
-                                @foreach ($equipments as $equipment)
-                                    <option value="{{ $equipment->id }}"> {{ $equipment->name }} </option>
-                                @endforeach
-                            </select>
-
-                        </div>
-                        <x-select :options="$equipments" class="form-control" name="equipments_id" valueField="name"
-                            label="Equipamento" />
-
-                        <button type="submit" class="btn btn-primary">Editar</button>
-                    </form>
+                </form>
+                <button type="submit" class="btn btn-primary">Editar</button>
     </body>
 
     </html>

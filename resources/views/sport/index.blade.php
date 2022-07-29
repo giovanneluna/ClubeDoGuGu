@@ -19,16 +19,23 @@
                 <center>
                     Nome do Esporte:{{ $sport->name }}<br>
                     Equipamento:{{ $sport->equipment->name }}<br>
-                    <a href="{{ route('sports.edit', $sport->id) }}"><button type="submit"
-                            class="btn btn-primary">Editar</button></a>
-                    <div>
-                        <form method="POST" action="{{ route('sports.destroy', $sport->id) }}">
+
+                    <form method="GET" action="{{ route('sports.edit', $sport->id) }}">
+                        <div class="form-group">
+                            {{ csrf_field() }}
+                            {{ method_field('EDIT') }}
+                            <div class="form-group">
+                                <input type="submit" class="btn btn-primary" value="Editar">
+                            </div>
+                    </form>
+                    <form method="POST" action="{{ route('sports.destroy', $sport->id) }}">
+                        <div class="form-group">
                             {{ csrf_field() }}
                             {{ method_field('DELETE') }}
-
                             <div class="form-group">
                                 <input type="submit" class="btn btn-danger delete-user" value="DELETAR">
                             </div>
+                    </form>
                 </center>
 
 
