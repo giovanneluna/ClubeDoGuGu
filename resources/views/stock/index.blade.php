@@ -11,22 +11,37 @@
     </head>
 
     <body>
-        <center><a href="equipment-stocks/create" button type="submit" class="btn btn-primary">Cadastrar
-                Esporte </button></a></center>
-        <ul>
+        <center><a href="equipment-stocks/create" button type="submit" class="btn btn-info">Cadastrar
+                Estoque </button></a></center>
+        <br>
+
+        <table class=" table table-bordered table text-white">
+            <thead class="table-warning">
+                <tr>
+                    <th scope="col">Número</th>
+                    <th scope="col">Quantidade</th>
+                    <th scope="col">Equipamento</th>
+                    <th scope="col">Editar</th>
+                    <th scope="col">Deletar</th>
+                </tr>
+            </thead>
             @foreach ($equipmentStocks as $equipmentStock)
-                <br>
-                <center>
-                    <li>
-
-                        Quantidade:{{ $equipmentStock->quantity }}<br>
-                        Equipamento:{{ $equipmentStock->equipment->name }}<br>
-
-                    </li>
-                    <br>
-                    <a class="btn btn-primary" href="{{ route('equipment-stocks.edit', $equipmentStock->id) }}">Editar</a>
-                </center>
-        </ul>
+                <tbody class="table-group-divider">
+                    <tr>
+                        <td scope="row">{{ $equipmentStock->id }}</td>
+                        <td scope="row">{{ $equipmentStock->equipment->name }}</td>
+                        <td scope="row">{{ $equipmentStock->quantity }}</td>
+                        <td scope="row"><a href="{{ route('equipment-stocks.edit', $equipmentStock->id) }}"><button
+                                    type="submit" class="btn btn-success ">Editar</button></a></td>
+                        <td scope="row">
+                            <form method="POST" action="{{ route('equipment-stocks.destroy', $equipmentStock->id) }}">
+                                {{ csrf_field() }}
+                                {{ method_field('DELETE') }}
+                                <div class="form-group">
+                                    <input type="submit" class="btn btn-danger delete-user" value="DELETAR">
+                                </div>
+                            </form>
+                        </td>
+            @endforeach
     </body>
-    @endforeach
 </x-app-layout>

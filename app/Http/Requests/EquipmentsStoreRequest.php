@@ -21,7 +21,7 @@ class EquipmentsStoreRequest extends FormRequest
             ],
             'description' => [
                 'required',
-                'numeric',
+
             ],
             'equipment_type_id' => [
                 'required',
@@ -38,12 +38,14 @@ class EquipmentsStoreRequest extends FormRequest
             'name.required' => 'É necessario informar o nome do equipamento',
             'name.unique' => 'Esse nome ja existe.',
 
-            //Description or Quantity
+            //Description
             'description.required' => 'É necessario informar a quantidade de equipamentos.',
-            'description.numeric' => 'Letras não são aceitas (Quantidade para Criar).',
 
             //EquipmentType
-            'equipment_type_id.required' => 'É necessario informar o tipo de equipamento.'
+            'equipment_type_id.required' => 'É necessario informar o tipo de equipamento.',
+
+            //Quantity
+            'quantity.null' => 'Esse item não foi cadastrado no estoque.',
         ];
     }
 }

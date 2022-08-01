@@ -33,13 +33,12 @@
                             <a href="/equipments"><button type="button"class="btn btn-dark">Visualizar</button></a>
                             <a href="equipments/create"><button type="submit"
                                     class="btn btn-primary">Cadastrar</button></a>
-                            <a href="stock"><button type="submit" class="btn btn-warning">Estoque</button></a>
+                            <a href="equipment-stocks"><button type="submit"
+                                    class="btn btn-warning">Estoque</button></a>
                             <p>
                                 <hr>
                             <h3 style="text-align:center;">Agendamentos Feitos </p><a href="/schedules/"><button
                                         type="button" class="btn btn-dark">Visualizar</button></a>
-                                <a href="schedules/create"><button type="submit"
-                                        class="btn btn-primary">Cadastrar</button></a>
 
                                 <p>
 

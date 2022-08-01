@@ -30,7 +30,7 @@
             @csrf
             <center>
                 <x-input name="name" placeholder="Ex:bola" type="text" label="Nome do Equipamento" />
-                <x-input name="description" type="text" label="Quantidade para Criar" />
+                <x-input name="description" type="text" label="Descrição do Equipamento" />
                 <x-select :options="$equipment_types" class="form-control" name="equipment_type_id" valueField="name"
                     label="Tipo de Equipamento" />
                 <br>

@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Block;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -24,5 +25,11 @@ class DatabaseSeeder extends Seeder
         $this->call(EquipmentTypeSeeder::class);
 
         $this->call(ScheduleStatusSeeder::class);
+
+        $this->call(BlockSeeder::class);
+
+        $this->call(ClientSeeder::class);
+
+        $this->call(SportSeeder::class);
     }
 }

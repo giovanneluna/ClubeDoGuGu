@@ -22,7 +22,6 @@ class EquipmentStockStore extends FormRequest
             'quantity' => [
                 'required',
             ],
-
         ];
     }
 }

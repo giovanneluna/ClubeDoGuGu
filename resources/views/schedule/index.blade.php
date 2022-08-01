@@ -11,43 +11,53 @@
     </head>
 
     <body>
-        <center><a href="{{ route('blocks.index') }}" button type="submit" class="btn btn-primary">Voltar</button></a>
+        <center><a href="{{ route('blocks.index') }}" button type="submit" class="btn btn-info">Voltar</button></a>
         </center>
-        <ul>
+        <br>
+        <table class=" table table-bordered table text-white">
+            <thead class="table-warning">
+                <tr>
+                    <th scope="col">Número</th>
+                    <th scope="col">Quadra</th>
+                    <th scope="col">Local</th>
+                    <th scope="col">Jogadores na Quadra</th>
+                    <th scope="col">Tamanho da Arquibancada</th>
+                    <th scope="col">Disponivel</th>
+                    <th scope="col">Status de Agendamento</th>
+                    <th scope="col">Editar</th>
+                    <th scope="col">Deletar Agendamento</th>
+                </tr>
+            </thead>
             @foreach ($schedules as $schedule)
-                <br>
-                <center>
-                    Cliente Agendado:{{ $schedule->client->name }}<br>
-                    Quadra Agendada:{{ $schedule->block->block_type }}<br>
-                    Horario do Jogo:{{ $schedule->time }}<br>
-                    Preço:{{ $schedule->total_price }}<br>
-                    Pago?:{{ $schedule->paid_out }}<br>
-                    <br>
-                    <form method="GET"action="{{ route('schedules.edit', $schedule->id) }}">
-                        <div class="form-group">
-                            {{ csrf_field() }}
-                            {{ method_field('EDIT') }}
-                            <div class="form-group">
-                                <input type="submit" class="btn btn-primary" value="Editar">
-                            </div>
+                <tbody class="table-group-divider">
+                    <tr>
+                        <td scope="row">{{ $schedule->id }}</td>
+                        <td scope="row">{{ $schedule->client->name }}</td>
+                        {{-- <td scope="row">{{ $block->sport->name }}</td> --}}
+                        <td scope="row">{{ $schedule->block->block_type }} </td>
+                        <td scope="row">{{ $schedule->time }}</td>
+                        <td scope="row">{{ $schedule->total_price }}</td>
+                        <td scope="row">{{ $schedule->paid_out }}</td>
 
-                    </form>
-                    <div>
-                        <form method="POST" action="{{ route('schedules.destroy', $schedule->id) }}">
-                            {{ csrf_field() }}
-                            {{ method_field('DELETE') }}
+                        <td scope="row"><a href="{{ route('schedules.edit', $schedule->id) }}"><button type="submit"
+                                    class="btn btn-primary">Editar</button></a></td>
+                        <td scope="row">
+                            <form method="POST" action="{{ route('schedules.destroy', $schedule->id) }}">
+                                {{ csrf_field() }}
+                                {{ method_field('DELETE') }}
+                                <div class="form-group">
+                                    <input type="submit" class="btn btn-danger delete-user" value="DELETAR">
+                                </div>
+                            </form>
+                        </td>
 
-                            <div class="form-group">
-                                <input type="submit" class="btn btn-danger delete-user" value="DELETAR">
-                            </div>
-                </center>
-                </form>
-
-                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-                    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
-                </script>
+                    </tr>
+                </tbody>
+            @endforeach
+        </table>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
+        </script>
 
     </body>
-    </ul>
-    @endforeach
 </x-app-layout>

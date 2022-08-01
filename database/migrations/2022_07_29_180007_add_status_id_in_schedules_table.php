@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('schedules', function (Blueprint $table) {
-            $table->foreignId('schedule_status_id')->constrained('schedules_status');
+            $table->foreignId('schedule_status_id')->constrained('schedules_status')->onDelete('CASCADE');
         });
     }
 
@@ -28,7 +28,7 @@ return new class extends Migration
         Schema::table('schedules', function (Blueprint $table) {
             if (Schema::hasColumn('schedules', 'schedule_status_id')) {
                 $table->dropForeign(['schedule_status_id']);
-                $table->dropColumn('equipment_type_id');
+                $table->dropColumn('schedule_status_id');
             }
         });
     }

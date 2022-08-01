@@ -25,12 +25,13 @@
         @endif
         <center>
             <h1>Criar Agendamento</h1>
-        </center><br>
+        </center>
+        <br>
+
         <form action="{{ route('schedules.store') }}" method="POST">
             @csrf
+
             <center>
-
-
                 <x-select :options="$clients" class="form-control" name="client_id" valueField="name"
                     label="Nome do Cliente" placeholder="Nome:" />
 
@@ -43,6 +44,7 @@
                         <input class="form-control" type="date" id="start" name="date" value="2022-07-22"
                             min="2022-01-01" max="2028-12-31">
                     </div>
+
                     <form class="row g-3">
                         <div class="col-md-3">
                             <label>Tempo de Jogo</label>
@@ -62,19 +64,21 @@
                                 <option value="18:00">18:00 - 19:00</option>
                             </select>
                         </div>
+
                         <x-input name="total_price" placeholder="Ex:bola" type="text" label="Preço Total"
                             value="{{ old('total_price') }}" />
 
                         <x-input name="paid_out" type="text" label="Pago?" value="{{ old('paid_out') }}" />
-                        <x-input name="equipment_quantity" type="text" label="Quantidade de Equipamento"
-                            value="{{ old('total_price') }}" />
+
+                        <x-input name="equipment_quantity" type="text"
+                            label="Quantidade de Equipamentos Usados na Quadra" value="{{ old('total_price') }}" />
+
                         <x-select :options="$equipments" class="form-control" name="equipments_id" valueField="name"
                             label="Equipamentos" placeholder="Equipamentos:" />
+
                         <button type="submit" class="btn btn-primary">Criar</button>
                     </form>
-
-
-
+            </center>
     </body>
 
     </html>

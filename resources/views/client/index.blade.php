@@ -20,79 +20,51 @@
     </head>
 
     <body>
+        <center><a href="clients/create" button type="submit" class="btn btn-info">Cadastrar
+                Cliente</button></a></center><br>
 
-
-        <center><a href="clients/create" button type="submit" class="btn btn-primary">Cadastrar
-                Cliente</button></a></center>
-
-        <ul>
+        <table class=" table table-bordered table text-white">
+            <thead class="table-warning">
+                <tr>
+                    <th scope="col">Número</th>
+                    <th scope="col">Nome do Cliente</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">CPF</th>
+                    <th scope="col">Número de Telefone</th>
+                    <th scope="col">Idade</th>
+                    <th scope="col">Endereço</th>
+                    <th scope="col">Editar</th>
+                    <th scope="col">Deletar</th>
+                </tr>
+            </thead>
             @foreach ($clients as $client)
-                <br>
-                <hr>
-                <center>
-                    Nome do Cliente:{{ $client->name }}<br>
-                    Email:{{ $client->email }}<br>
-                    CPF:{{ $client->cpf }}<br>
-                    Numero de Telefone:{{ $client->telephone }}<br>
-                    Idade:{{ $client->age }}<br>
-                    Endereço:{{ $client->address }}<br>
-                    <a href="{{ route('clients.edit', $client->id) }}"><button type="submit"
-                            class="btn btn-primary">Editar</button></a>
-                    <div>
-                        <button type="button" class="btn btn-danger" data-bs-toggle="modal"
-                            data-bs-target="#exampleModal" data-id="{{ $client->id }}">Deletar
-                        </button>
-
-                    </div>
-                    <hr>
-                </center>
-
-
-                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-                    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
-                </script>
+                <tbody class="table-group-divider">
+                    <tr>
+                        <td scope="row">{{ $client->id }}</td>
+                        <td scope="row">{{ $client->name }}</td>
+                        <td scope="row">{{ $client->email }}</td>
+                        <td scope="row">{{ $client->cpf }}</td>
+                        <td scope="row">{{ $client->telephone }}</td>
+                        <td scope="row">{{ $client->age }}</td>
+                        <td scope="row">{{ $client->address }}</td>
+                        <td scope="row"><a href="{{ route('clients.edit', $client->id) }}"><button type="submit"
+                                    class="btn btn-success ">Editar</button></a></td>
+                        <td scope="row">
+                            <form method="POST" action="{{ route('clients.destroy', $client->id) }}">
+                                {{ csrf_field() }}
+                                {{ method_field('DELETE') }}
+                                <div class="form-group">
+                                    <input type="submit" class="btn btn-danger delete-user" value="DELETAR">
+                                </div>
+                            </form>
+                        </td>
+            @endforeach
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
+            </script>
 
     </body>
-    </ul>
-
-
-    <center>
-        <div class="py-4">
-            {{ $clients->links() }}
-        </div>
-    </center>
-    <!-- Modal -->
-    <form data-bs-toggle="modal" data-bs-target="#exampleModal" method="POST"
-        action="{{ route('clients.destroy', $client->id) }}">
-        {{ csrf_field() }}
-        {{ method_field('DELETE') }}
-    </form>
-    <div class="modal fade text-dark" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content ">
-                <div class="modal-header bg-danger">
-                    <h5 class="modal-title " id="exampleModalLabel">Confirmação</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    Tem certeza que deseja excluir esse usuario?<li>
-                        {{ $client->name }}
-                    </li>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <form data-bs-toggle="modal" data-bs-target="#exampleModal" method="POST"
-                        action="{{ route('clients.destroy', $client->id) }}">
-                        {{ csrf_field() }}
-                        {{ method_field('DELETE') }}
-                        <div class="form-group">
-                            <input type="submit" class="btn btn-danger delete-user" value="DELETAR">
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
+    <div class="py-4">
+        {{ $clients->links() }}
     </div>
-    @endforeach
 </x-app-layout>
