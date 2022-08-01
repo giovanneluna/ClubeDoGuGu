@@ -18,7 +18,7 @@
         <table class=" table table-bordered table text-white">
             <thead class="table-warning">
                 <tr>
-                    <th scope="col">Número</th>
+                    <th scope="col">Código</th>
                     <th scope="col">Quantidade</th>
                     <th scope="col">Equipamento</th>
                     <th scope="col">Editar</th>

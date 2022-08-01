@@ -26,7 +26,7 @@
         <table class=" table table-bordered table text-white">
             <thead class="table-warning">
                 <tr>
-                    <th scope="col">Número</th>
+                    <th scope="col">Código</th>
                     <th scope="col">Nome do Cliente</th>
                     <th scope="col">Email</th>
                     <th scope="col">CPF</th>

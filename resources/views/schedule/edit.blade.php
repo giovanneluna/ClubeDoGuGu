@@ -87,10 +87,10 @@
                                         </select>
                                     </div>
                                 </div>
-                                <x-input name="name" type="text" label="Preço Total"
+                                <x-input name="total_price" type="text" label="Preço Total"
                                     value="{{ $schedule->total_price ?? old('total_price') }}" />
 
-                                <x-input name="name" type="text" label="Pago?"
+                                <x-input name="paid_out" type="text" label="Pago?"
                                     value="{{ $schedule->paid_out ?? old('paid_out') }}" />
                                 <button type="submit" class="btn btn-primary">Editar </button>
                             </form>

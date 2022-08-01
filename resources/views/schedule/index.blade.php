@@ -17,7 +17,7 @@
         <table class=" table table-bordered table text-white">
             <thead class="table-warning">
                 <tr>
-                    <th scope="col">Número</th>
+                    <th scope="col">Código</th>
                     <th scope="col">Quadra</th>
                     <th scope="col">Local</th>
                     <th scope="col">Jogadores na Quadra</th>
@@ -38,7 +38,7 @@
                         <td scope="row">{{ $schedule->time }}</td>
                         <td scope="row">{{ $schedule->total_price }}</td>
                         <td scope="row">{{ $schedule->paid_out }}</td>
-
+                        <td scope="row">Pronto</td>
                         <td scope="row"><a href="{{ route('schedules.edit', $schedule->id) }}"><button type="submit"
                                     class="btn btn-primary">Editar</button></a></td>
                         <td scope="row">

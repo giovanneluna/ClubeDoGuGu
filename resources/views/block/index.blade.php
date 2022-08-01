@@ -18,7 +18,7 @@
         <table class=" table table-bordered table text-white">
             <thead class="table-warning">
                 <tr>
-                    <th scope="col">Número</th>
+                    <th scope="col">Código</th>
                     <th scope="col">Quadra</th>
                     <th scope="col">Local</th>
                     <th scope="col">Jogadores na Quadra</th>

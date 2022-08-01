@@ -20,7 +20,7 @@
         <table class=" table table-bordered table text-white">
             <thead class="table-warning">
                 <tr>
-                    <th scope="col">Número</th>
+                    <th scope="col">Código</th>
                     <th scope="col">Nome do Equipamento</th>
                     <th scope="col">Tipo de Equipamento</th>
                     <th scope="col">Descrição do Equipamento</th>
