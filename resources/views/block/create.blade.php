@@ -32,14 +32,30 @@
 
                 <x-input name="block_type" placeholder="Ex:QuadraA" type="text" label="Tipo de Quadra"
                     value="{{ old('block_type') }}" />
-                <x-input name="is_available" placeholder="1 ou 0" type="text" label="Esta Disponivel?"
-                    value="{{ old('is_available') }}" />
+
+                <label>Está Disponivel?</label>
+                <div>
+                    <input class="form-check-input" type="checkbox" name="is_available" value="1"
+                        id="is_available">
+                    <label class="form-check-label" for="is_available">
+                        Sim
+                    </label><br>
+                    <input class="form-check-input" type="checkbox" name="is_available" value="0"
+                        id="is_available">
+                    <label class="form-check-label" for="is_available">
+                        Não
+                    </label>
+                </div>
+
                 <x-input name="public_amount" type="text" label="Capacidade Total da Arquibancada"
                     value="{{ old('public_amount') }}" />
+
                 <x-input name="local" type="text" label="Localização"
                     placeholder="Ex:A primeira direta da entrada do clube" value="{{ old('local') }}" />
+
                 <x-input name="amount" type="text" label="Quantidade Total de Jogadores dentro da quadra"
                     value="{{ old('amount') }}" />
+
                 <x-select :options="$sports" class="form-control" name="sport_id" label="Esporte" />
         </form>
         <button type="submit" class="btn btn-primary">Criar</button>

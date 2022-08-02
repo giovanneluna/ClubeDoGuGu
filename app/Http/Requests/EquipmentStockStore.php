@@ -24,4 +24,17 @@ class EquipmentStockStore extends FormRequest
             ],
         ];
     }
+    public function messages()
+    {
+        return [
+            //Quantity
+            'quantity.required' => 'É necessario informar a quantidade de equipamentos.',
+
+            //Equipments_id
+            'equipments_id' => 'É necessario informar o equipamento.',
+
+
+
+        ];
+    }
 }

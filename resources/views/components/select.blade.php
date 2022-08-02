@@ -9,6 +9,5 @@
                 {{ $option->$valueField }}
             </option>
         @endforeach
-
     </select>
 </div>

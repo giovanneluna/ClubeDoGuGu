@@ -27,6 +27,7 @@
                     <th scope="col">Estoque</th>
                     <th scope="col">Editar</th>
                     <th scope="col">Deletar</th>
+                    <th scope="col">Cadastrar Estoque</th>
                 </tr>
             </thead>
             @foreach ($equipments as $equipment)
@@ -50,6 +51,8 @@
                                 </div>
                             </form>
                         </td>
+                        <td scope="row"><a href="equipment-stocks"><button type="submit"
+                                    class="btn btn-info ">Cadastrar Estoque</button></a></td>
 
                     </tr>
                     </center>

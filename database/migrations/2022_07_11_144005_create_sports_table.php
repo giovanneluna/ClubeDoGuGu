@@ -17,8 +17,6 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->foreignId('equipments_id')->constrained('equipments')->onDelete('CASCADE');
-            // $table->foreignId('block_id')->constrained('blocks');
-            // $table->string('equipment_quantity');
             $table->timestamps();
         });
     }

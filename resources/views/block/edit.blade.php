@@ -41,6 +41,19 @@
                             <input name="is_available" type="text"
                                 class="form-control"value="{{ $block->is_available }}">
                         </div>
+                        <label>Está Disponivel?</label>
+                        <div>
+                            <input class="form-check-input" type="checkbox" name="is_available" value="1"
+                                id="is_available">
+                            <label class="form-check-label" for="is_available">
+                                Sim
+                            </label><br>
+                            <input class="form-check-input" type="checkbox" name="is_available" value="0"
+                                id="is_available">
+                            <label class="form-check-label" for="is_available">
+                                Não
+                            </label>
+                        </div>
                         <form class="row g-3">
                             <div class="col-md-4">
                                 <label>Capacidade Total da Arquibancada</label>

@@ -36,11 +36,12 @@ class SchedulesController extends Controller
      */
     public function create(Block $block)
     {
+        $schedule = Schedule::all();
         $equipments = Equipment::all();
         $clients = Client::all();
         $blocks = Block::all();
 
-        return view('schedule.create', compact('blocks', 'clients', 'block', 'equipments'));
+        return view('schedule.create', compact('blocks', 'clients', 'block', 'equipments', 'schedule'));
     }
 
     /**

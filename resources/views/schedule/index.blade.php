@@ -18,11 +18,13 @@
             <thead class="table-warning">
                 <tr>
                     <th scope="col">Código</th>
+                    <th scope="col">Nome do Cliente</th>
                     <th scope="col">Quadra</th>
-                    <th scope="col">Local</th>
-                    <th scope="col">Jogadores na Quadra</th>
-                    <th scope="col">Tamanho da Arquibancada</th>
-                    <th scope="col">Disponivel</th>
+                    <th scope="col">Data do Jogo</th>
+                    <th scope="col">Inicio do Jogo</th>
+                    <th scope="col">Fim do Jogo</th>
+                    <th scope="col">Valor do Jogo</th>
+                    <th scope="col">Pago</th>
                     <th scope="col">Status de Agendamento</th>
                     <th scope="col">Editar</th>
                     <th scope="col">Deletar Agendamento</th>
@@ -33,14 +35,15 @@
                     <tr>
                         <td scope="row">{{ $schedule->id }}</td>
                         <td scope="row">{{ $schedule->client->name }}</td>
-                        {{-- <td scope="row">{{ $block->sport->name }}</td> --}}
                         <td scope="row">{{ $schedule->block->block_type }} </td>
+                        <td scope="row">{{ $schedule->date }}</td>
                         <td scope="row">{{ $schedule->time }}</td>
+                        <td scope="row">{{ $schedule->endTime }}</td>
                         <td scope="row">{{ $schedule->total_price }}</td>
-                        <td scope="row">{{ $schedule->paid_out }}</td>
-                        <td scope="row">Pronto</td>
-                        <td scope="row"><a href="{{ route('schedules.edit', $schedule->id) }}"><button type="submit"
-                                    class="btn btn-primary">Editar</button></a></td>
+                        <td scope="row">{{ $schedule->paid_out ? 'Sim' : 'Não' }}</td>
+                        <td scope="row">{{ $schedule->schedule_status->status }}</td>
+                        <td scope="row"><a href="{{ route('schedules.edit', $schedule->id) }}"><button
+                                    type="submit" class="btn btn-primary">Editar</button></a></td>
                         <td scope="row">
                             <form method="POST" action="{{ route('schedules.destroy', $schedule->id) }}">
                                 {{ csrf_field() }}
@@ -54,10 +57,9 @@
                     </tr>
                 </tbody>
             @endforeach
-        </table>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
-        </script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
+            </script>
 
     </body>
 </x-app-layout>

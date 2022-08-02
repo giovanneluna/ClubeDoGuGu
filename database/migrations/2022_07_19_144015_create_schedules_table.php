@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->date('date');
             $table->time('time');
+            $table->time('endTime');
             $table->float('total_price');
             $table->foreignId('client_id')->constrained('clients')->onDelete('CASCADE');
             $table->boolean('paid_out');

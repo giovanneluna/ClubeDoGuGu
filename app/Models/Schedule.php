@@ -13,6 +13,7 @@ class Schedule extends Model
         'block_id',
         'client_id',
         'time',
+        'endTime',
         'date',
         'total_price',
         'paid_out',

@@ -61,24 +61,14 @@
                             <form class="row g-3">
                                 <div class="col-md-3">
                                     <label>Tempo de Jogo</label>
-                                    <select class="form-select" name="time">
-                                        <option selected disabled value=""></option>
-                                        <option value="07:00">07:00 - 08:00</option>
-                                        <option value="08:00">08:00 - 09:00</option>
-                                        <option value="09:00">09:00 - 10:00</option>
-                                        <option value="10:00">10:00 - 11:00</option>
-                                        <option value="11:00">11:00 - 12:00</option>
-                                        <option value="12:00">12:00 - 13:00</option>
-                                        <option value="13:00">13:00 - 14:00</option>
-                                        <option value="14:00">14:00 - 15:00</option>
-                                        <option value="15:00">15:00 - 16:00</option>
-                                        <option value="16:00">16:00 - 17:00</option>
-                                        <option value="17:00">17:00 - 18:00</option>
-                                        <option value="18:00">18:00 - 19:00</option>
-                                    </select>
+                                    <input type="time" id="time" name="time" min="07:00" max="18:00"
+                                        value="{{ $schedule->time ?? old('time') }}" required><br>
+                                    <label>Tempo Final</label>
+                                    <input type="time" id="endTime" name="endTime" min="07:00" max="18:00"
+                                        value="{{ $schedule->endTime ?? old('endTime') }}" required>
                                     <div class="col-md-4">
                                         <label>Status do Agendamento</label>
-                                        <select class="form-select" name="block_id">
+                                        <select class="form-select" name="schedule_status_id">
                                             @foreach ($schedulesStatus as $scheduleStatus)
                                                 <option value="{{ $scheduleStatus->id }}"
                                                     @if ($scheduleStatus->id == $schedule->schedule_status_id) selected @endif>
@@ -90,8 +80,19 @@
                                 <x-input name="total_price" type="text" label="Preço Total"
                                     value="{{ $schedule->total_price ?? old('total_price') }}" />
 
-                                <x-input name="paid_out" type="text" label="Pago?"
-                                    value="{{ $schedule->paid_out ?? old('paid_out') }}" />
+                                <label>Pago?</label>
+                                <div>
+                                    <input class="form-check-input" name="paid_out" type="checkbox" name="paid_out"
+                                        value="1" id="is_available">
+                                    <label class="form-check-label" for="is_available">
+                                        Sim
+                                    </label><br>
+                                    <input class="form-check-input" type="checkbox" name="paid_out" value="0"
+                                        id="is_available">
+                                    <label class="form-check-label" for="is_available">
+                                        Não
+                                    </label>
+                                </div>
                                 <button type="submit" class="btn btn-primary">Editar </button>
                             </form>
     </body>

@@ -12,15 +12,16 @@
 
     <body>
         <center><a href="equipment-stocks/create" button type="submit" class="btn btn-info">Cadastrar
-                Estoque </button></a></center>
+                Estoque </button></a>
+        </center>
         <br>
 
         <table class=" table table-bordered table text-white">
             <thead class="table-warning">
                 <tr>
                     <th scope="col">Código</th>
-                    <th scope="col">Quantidade</th>
                     <th scope="col">Equipamento</th>
+                    <th scope="col">Quantidade</th>
                     <th scope="col">Editar</th>
                     <th scope="col">Deletar</th>
                 </tr>

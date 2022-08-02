@@ -26,10 +26,6 @@ class DatabaseSeeder extends Seeder
 
         $this->call(ScheduleStatusSeeder::class);
 
-        $this->call(BlockSeeder::class);
-
         $this->call(ClientSeeder::class);
-
-        $this->call(SportSeeder::class);
     }
 }

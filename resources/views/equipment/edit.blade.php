@@ -38,13 +38,20 @@
                         <input name="description" type="text"
                             class="form-control"value="{{ $equipment->description }}">
                     </div>
-                    <x-select :options="$equipment_types" class="form-control" name="equipment_type_id" valueField="name"
-                        label="Tipo de Equipamento"
-                        value="{{ $equipment->equipment_type->id ?? old('equipment_type_name') }}" />
-                    <button type="submit" class="btn btn-primary">Editar</button>
-                </form>
-
-                <center>
+                    <form class="row g-3">
+                        <div class="col-md-4">
+                            <label>Equipamento</label>
+                            <select class="form-select" name="equipment_type_id">
+                                @foreach ($equipment_types as $equipment_type)
+                                    <option value="{{ $equipment_type->id }}"
+                                        @if ($equipment->equipment_type_id == $equipment_type->id) selected @endif>
+                                        {{ $equipment_type->name }} </option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Editar</button>
+                    </form>
+                    <center>
     </body>
 
     </html>

@@ -44,40 +44,38 @@
                         <input class="form-control" type="date" id="start" name="date" value="2022-07-22"
                             min="2022-01-01" max="2028-12-31">
                     </div>
+                    <label>Tempo Inicial</label>
+                    <input type="time" id="time" name="time" min="07:00" max="18:00"
+                        value="$schedule->time" required>
+                    <label>Tempo Final</label>
+                    <input type="time" id="endTime" name="endTime" min="07:00" max="18:00"
+                        value="$schedule->endTime" required>
 
-                    <form class="row g-3">
-                        <div class="col-md-3">
-                            <label>Tempo de Jogo</label>
-                            <select class="form-select" name="time">
-                                <option selected disabled value=""></option>
-                                <option value="07:00">07:00 - 08:00</option>
-                                <option value="08:00">08:00 - 09:00</option>
-                                <option value="09:00">09:00 - 10:00</option>
-                                <option value="10:00">10:00 - 11:00</option>
-                                <option value="11:00">11:00 - 12:00</option>
-                                <option value="12:00">12:00 - 13:00</option>
-                                <option value="13:00">13:00 - 14:00</option>
-                                <option value="14:00">14:00 - 15:00</option>
-                                <option value="15:00">15:00 - 16:00</option>
-                                <option value="16:00">16:00 - 17:00</option>
-                                <option value="17:00">17:00 - 18:00</option>
-                                <option value="18:00">18:00 - 19:00</option>
-                            </select>
-                        </div>
+                    <x-input name="total_price" placeholder="Ex:bola" type="text" label="Preço Total"
+                        value="{{ old('total_price') }}" />
 
-                        <x-input name="total_price" placeholder="Ex:bola" type="text" label="Preço Total"
-                            value="{{ old('total_price') }}" />
+                    <label>Pago?</label>
+                    <div>
+                        <input class="form-check-input" type="checkbox" name="paid_out" value="1"
+                            id="is_available">
+                        <label class="form-check-label" for="is_available">
+                            Sim
+                        </label><br>
+                        <input class="form-check-input" type="checkbox" name="paid_out" value="0"
+                            id="is_available">
+                        <label class="form-check-label" for="is_available">
+                            Não
+                        </label>
+                    </div>
 
-                        <x-input name="paid_out" type="text" label="Pago?" value="{{ old('paid_out') }}" />
+                    <x-input name="equipment_quantity" type="text"
+                        label="Quantidade de Equipamentos Usados na Quadra" value="{{ old('total_price') }}" />
 
-                        <x-input name="equipment_quantity" type="text"
-                            label="Quantidade de Equipamentos Usados na Quadra" value="{{ old('total_price') }}" />
+                    <x-select :options="$equipments" class="form-control" name="equipments_id" valueField="name"
+                        label="Equipamentos" placeholder="Equipamentos:" />
 
-                        <x-select :options="$equipments" class="form-control" name="equipments_id" valueField="name"
-                            label="Equipamentos" placeholder="Equipamentos:" />
-
-                        <button type="submit" class="btn btn-primary">Criar</button>
-                    </form>
+                    <button type="submit" class="btn btn-primary">Criar</button>
+                </form>
             </center>
     </body>
 

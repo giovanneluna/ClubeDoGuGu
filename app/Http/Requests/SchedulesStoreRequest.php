@@ -23,6 +23,9 @@ class SchedulesStoreRequest extends FormRequest
             'time' => [
                 'required',
             ],
+            'endTime' => [
+                'required'
+            ],
             'date' => [
                 'required',
 
@@ -57,7 +60,10 @@ class SchedulesStoreRequest extends FormRequest
             'block_id.required' => 'A quadra não foi informada.',
 
             //Time
-            'time.required' => 'É necessario informar o tempo.',
+            'time.required' => 'É necessario informar o tempo Inicial.',
+
+            //EndTime
+            'endTime.required' => 'É necessario informar o tempo Final.',
 
             //Date
             'date.required' => 'É necessario informar a data.',

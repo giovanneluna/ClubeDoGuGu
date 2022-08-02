@@ -39,7 +39,7 @@
                         <td scope="row">{{ $block->local }} </td>
                         <td scope="row">{{ $block->amount }}</td>
                         <td scope="row">{{ $block->public_amount }}</td>
-                        <td scope="row">{{ $block->is_available }}</td>
+                        <td scope="row">{{ $block->is_available == 1 ? 'Sim' : 'Não' }}</td>
 
                         <td scope="row"><a href="{{ route('blocks.edit', $block->id) }}"><button type="submit"
                                     class="btn btn-primary">Editar</button></a></td>
