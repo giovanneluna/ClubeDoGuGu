@@ -1,5 +1,4 @@
 <x-app-layout>
-
     <!DOCTYPE html>
     <html lang="pt-br">
 
@@ -14,8 +13,6 @@
 
     <body>
         @if ($errors->any())
-
-
             <div class="alert alert-danger" role="alert">
                 @foreach ($errors->all() as $error)
                     <li><span>{{ $error }}</span></li>
@@ -23,7 +20,6 @@
                 </ul>
             </div>
         @endif
-
         <form action="{{ route('clients.store') }}" method="POST">
             @csrf
             <h1>
@@ -46,6 +42,5 @@
                 <button type="submit" class="btn btn-primary">Cadastrar</button>
             </center>
         </form>
-
     </body>
 </x-app-layout>

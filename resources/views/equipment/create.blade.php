@@ -14,8 +14,6 @@
 
     <body>
         @if ($errors->any())
-
-
             <div class="alert alert-danger">
                 @foreach ($errors->all() as $error)
                     <li><span>{{ $error }}</span></li>
@@ -35,7 +33,6 @@
                     label="Tipo de Equipamento" />
                 <br>
                 <button type="submit" class="btn btn-primary">Criar</button>
-
             </center>
         </form>
     </body>

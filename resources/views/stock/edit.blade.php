@@ -21,9 +21,8 @@
                 </ul>
             </div>
         @endif
-        <center>
-            <h1>Edição de Estoque</h1>
-        </center> <br>
+        <h1 class="d-flex justify-content-center">Edição de Estoque</h1>
+        <br>
         <form action="{{ route('equipment-stocks.update', $equipmentStock->id) }}" method="POST">
             @csrf
             @method('PUT')
@@ -31,7 +30,7 @@
                 <x-input name="quantity" value="{{ $equipmentStock->quantity }}" type="number" label="Quantidade" />
                 <form class="row g-3">
                     <div class="col-md-4">
-                        <label>Equipamento</label>
+                        <label class="d-flex justify-content-center">Equipamento</label>
                         <select class="form-select" name="equipments_id">
                             @foreach ($equipments as $equipment)
                                 <option value="{{ $equipment->id }}" @if ($equipment->id == $equipmentStock->equipments_id) selected @endif>
@@ -39,10 +38,11 @@
                             @endforeach
                         </select>
                     </div>
-
-                    <br>
-                    <button type="submit" class="btn btn-primary">Criar</button>
+                </form>
+                <br>
+                <button type="submit" class="btn btn-primary">Criar</button>
             </center>
+            </div>
         </form>
     </body>
 

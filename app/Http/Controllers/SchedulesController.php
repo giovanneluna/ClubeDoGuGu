@@ -8,48 +8,35 @@ use App\Http\Requests\ScheduleUpdateRequest;
 use App\Models\Block;
 use App\Models\Client;
 use App\Models\Equipment;
+use App\Models\EquipmentUse;
 use App\Models\Schedule;
 use App\Models\ScheduleStatus;
+use App\Services\AddEquipmentInStockService;
 use App\Services\RemoveEquipmentInStockService;
 use Illuminate\Auth\Events\Validated;
 use Illuminate\Http\Request;
 
 class SchedulesController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
-
+        $equipments_use = EquipmentUse::get();
         $client = Client::get();
         $schedules = Schedule::get();
-        return view('schedule.index', compact('schedules', 'client'));
+        return view('schedule.index', compact('schedules', 'client', 'equipments_use,'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create(Block $block)
     {
+        $equipments_use = EquipmentUse::get();
         $schedule = Schedule::all();
         $equipments = Equipment::all();
         $clients = Client::all();
         $blocks = Block::all();
 
-        return view('schedule.create', compact('blocks', 'clients', 'block', 'equipments', 'schedule'));
+        return view('schedule.create', compact('blocks', 'clients', 'block', 'equipments', 'schedule', 'equipments_use'));
     }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
 
     public function store(SchedulesStoreRequest $request)
     {
@@ -57,33 +44,16 @@ class SchedulesController extends Controller
         $formdata['schedule_status_id'] = ScheduleStatus::first()->id;
         $equipmentsRemoved = app(RemoveEquipmentInStockService::class)->run($formdata['equipments_id'], $formdata['equipment_quantity']);
         if ($equipmentsRemoved == false) {
-
             return redirect()->back()->withErrors('Você não possui equipamentos disponiveis.');
         }
-
         Schedule::create($formdata);
-
-
         return redirect()->route('schedules.index');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
-        //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         $schedulesStatus = ScheduleStatus::all();
@@ -95,27 +65,17 @@ class SchedulesController extends Controller
         return view('schedule.edit', compact('schedule', 'blocks', 'clients', 'schedulesStatus'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(ScheduleUpdateRequest $request, Schedule $schedule)
     {
-        $clients = Client::all();
-        $blocks = Block::all();
+        dd($request);
+        $formdata = $request->validated();
+        if ($formdata['schedule_status_id'] == 2 || $formdata['schedule_status_id'] == 3) {
+            app(AddEquipmentInStockService::class)->run($schedule->equipment_id, $schedule->equipment_quantity);
+        }
         $schedule->update($request->validated());
-        return redirect()->route('schedules.index', compact('blocks', 'clients'));
+        return redirect()->route('schedules.index');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(Schedule $schedule)
     {
         $schedule->delete();

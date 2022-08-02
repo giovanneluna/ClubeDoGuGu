@@ -14,7 +14,7 @@
         <center><a href="{{ route('blocks.index') }}" button type="submit" class="btn btn-info">Voltar</button></a>
         </center>
         <br>
-        <table class=" table table-bordered table text-white">
+        <table class=" table table-bordered text-white">
             <thead class="table-warning">
                 <tr>
                     <th scope="col">Código</th>
@@ -25,6 +25,7 @@
                     <th scope="col">Fim do Jogo</th>
                     <th scope="col">Valor do Jogo</th>
                     <th scope="col">Pago</th>
+                    <th scope="col">Equipamento Cadastrado</th>
                     <th scope="col">Status de Agendamento</th>
                     <th scope="col">Editar</th>
                     <th scope="col">Deletar Agendamento</th>
@@ -53,7 +54,6 @@
                                 </div>
                             </form>
                         </td>
-
                     </tr>
                 </tbody>
             @endforeach

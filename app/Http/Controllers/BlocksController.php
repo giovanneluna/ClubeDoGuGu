@@ -10,11 +10,6 @@ use Illuminate\Http\Request;
 
 class BlocksController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
 
@@ -23,11 +18,6 @@ class BlocksController extends Controller
         return view('block.index', compact('blocks', 'sports'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
 
@@ -36,36 +26,17 @@ class BlocksController extends Controller
         return view('block.create', compact('blocks', 'sports'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(BlocksStoreRequest $request)
     {
         Block::create($request->all());
         return redirect()->route('blocks.index');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
-        if (!$blocks = Block::find($id))
-            return redirect()->route('blocks.index', compact('blocks'));
+        return redirect()->route('blocks.index');
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
 
@@ -75,25 +46,12 @@ class BlocksController extends Controller
         return view('block.edit', compact('block'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(BlockUpdateRequest $request, Block $block)
     {
         $block->update($request->validated());
         return redirect()->route('blocks.index');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(Block $block)
     {
 

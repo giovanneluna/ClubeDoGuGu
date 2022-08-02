@@ -2,21 +2,22 @@
 
     <head>
         <div class="p-3 mb-2 bg-dark text-white">
-            <center>
-                <h2>Estoque de Equipamentos</h2>
-            </center>
+
+            <h2 class="d-flex justify-content-center">Estoque de Equipamentos</h2>
+
             <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
                 integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
                 crossorigin="anonymous">
+
     </head>
 
     <body>
-        <center><a href="equipment-stocks/create" button type="submit" class="btn btn-info">Cadastrar
-                Estoque </button></a>
+        <center>
+            <a href="equipment-stocks/create" button type="submit" class="btn btn-info">Cadastrar Estoque</a>
         </center>
         <br>
 
-        <table class=" table table-bordered table text-white">
+        <table class=" table table-bordered text-white">
             <thead class="table-warning">
                 <tr>
                     <th scope="col">Código</th>
@@ -43,6 +44,9 @@
                                 </div>
                             </form>
                         </td>
+                    </tr>
+                </tbody>
+                </div>
             @endforeach
     </body>
 </x-app-layout>

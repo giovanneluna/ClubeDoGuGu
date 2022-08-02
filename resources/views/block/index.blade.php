@@ -15,7 +15,7 @@
                 Quadra</button></a></center>
         <br>
 
-        <table class=" table table-bordered table text-white">
+        <table class=" table table-bordered text-white">
             <thead class="table-warning">
                 <tr>
                     <th scope="col">Código</th>

@@ -1,5 +1,4 @@
 <x-app-layout>
-
     <!DOCTYPE html>
     <html lang="pt-br">
 
@@ -14,8 +13,6 @@
 
     <body>
         @if ($errors->any())
-
-
             <div class="alert alert-danger">
                 @foreach ($errors->all() as $error)
                     <li><span>{{ $error }}</span></li>
@@ -23,7 +20,6 @@
                 </ul>
             </div>
         @endif
-
         <form action="{{ route('clients.update', $client->id) }}" method="POST">
             @csrf
             @method('PUT')
@@ -66,6 +62,7 @@
                                         </div>
                                         <br>
                                         <button type="submit" class="btn btn-primary">Editar</button>
+                                    </form>
             </center>
         </form>
     </body>

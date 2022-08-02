@@ -14,8 +14,6 @@
 
     <body>
         @if ($errors->any())
-
-
             <div class="alert alert-danger">
                 @foreach ($errors->all() as $error)
                     <li><span>{{ $error }}</span></li>
@@ -27,17 +25,13 @@
             <h1>Criar Agendamento</h1>
         </center>
         <br>
-
         <form action="{{ route('schedules.store') }}" method="POST">
             @csrf
-
             <center>
                 <x-select :options="$clients" class="form-control" name="client_id" valueField="name"
                     label="Nome do Cliente" placeholder="Nome:" />
-
                 <x-select :options="$blocks" class="form-control" name="block_id" valueField="block_type" label="Quadra"
                     placeholder="Quadra:" />
-
                 <form class="row g-3">
                     <div class="col-md-4">
                         <label for="start">Data</label>
@@ -50,10 +44,8 @@
                     <label>Tempo Final</label>
                     <input type="time" id="endTime" name="endTime" min="07:00" max="18:00"
                         value="$schedule->endTime" required>
-
                     <x-input name="total_price" placeholder="Ex:bola" type="text" label="Preço Total"
                         value="{{ old('total_price') }}" />
-
                     <label>Pago?</label>
                     <div>
                         <input class="form-check-input" type="checkbox" name="paid_out" value="1"
@@ -67,13 +59,11 @@
                             Não
                         </label>
                     </div>
-
-                    <x-input name="equipment_quantity" type="text"
-                        label="Quantidade de Equipamentos Usados na Quadra" value="{{ old('total_price') }}" />
+                    <x-input name="equipments_use" type="text" label="Quantidade de Equipamentos Usados na Quadra"
+                        value="{{ old('equipments_use') }}" />
 
                     <x-select :options="$equipments" class="form-control" name="equipments_id" valueField="name"
                         label="Equipamentos" placeholder="Equipamentos:" />
-
                     <button type="submit" class="btn btn-primary">Criar</button>
                 </form>
             </center>

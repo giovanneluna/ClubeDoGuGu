@@ -1,5 +1,4 @@
 <x-app-layout>
-
     <!DOCTYPE html>
     <html lang="pt-br">
 
@@ -14,8 +13,6 @@
 
     <body>
         @if ($errors->any())
-
-
             <div class="alert alert-danger">
                 @foreach ($errors->all() as $error)
                     <li><span>{{ $error }}</span></li>
@@ -30,7 +27,6 @@
             @csrf
             @method('PUT')
             <center>
-
                 <form class="row g-3">
                     <div class="col-md-4">
                         <label>Cliente</label>

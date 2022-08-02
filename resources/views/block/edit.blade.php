@@ -14,8 +14,6 @@
 
     <body>
         @if ($errors->any())
-
-
             <div class="alert alert-danger">
                 @foreach ($errors->all() as $error)
                     <li><span>{{ $error }}</span></li>
@@ -23,11 +21,10 @@
                 </ul>
             </div>
         @endif
-
         <form action="{{ route('blocks.update', $block->id) }}" method="POST">
             @csrf
             @method('PUT')
-            <Center>
+            <center>
                 <h1>Editar Quadra {{ $block->block_type }}</h1>
                 <form class="row g-3">
                     <div class="col-md-4">
@@ -44,13 +41,14 @@
                         <label>Está Disponivel?</label>
                         <div>
                             <input class="form-check-input" type="checkbox" name="is_available" value="1"
-                                id="is_available">
+                                id="is_available" {{ old('is_available') ? 'checked' : null }}>
                             <label class="form-check-label" for="is_available">
                                 Sim
                             </label><br>
                             <input class="form-check-input" type="checkbox" name="is_available" value="0"
-                                id="is_available">
-                            <label class="form-check-label" for="is_available">
+                                id="is_available1">
+                            <label class="form-check-label" for="is_available1"
+                                {{ old('is_available') ? 'checked' : null }}>
                                 Não
                             </label>
                         </div>
@@ -73,8 +71,13 @@
                                             class="form-control"value="{{ $block->amount }}">
                                     </div>
                                     <button type="submit" class="btn btn-primary">Editar</button>
-            </Center>
-        </form>
+                                </form>
+                            </form>
+                        </form>
+                    </form>
+                </form>
+
+            </center>
     </body>
 
     </html>

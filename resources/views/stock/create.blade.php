@@ -14,29 +14,22 @@
 
     <body>
         @if ($errors->any())
-
-
             <div class="alert alert-danger">
                 @foreach ($errors->all() as $error)
                     <li><span>{{ $error }}</span></li>
                 @endforeach
-                </ul>
             </div>
         @endif
-        <center>
-            <h1>Cadastro de Estoque</h1>
-        </center> <br>
-        <form action="{{ route('equipment-stocks.store') }}" method="POST">
+        <h1 class="d-flex justify-content-center">Cadastro de Estoque</h1>
+        <br>
+        <form class="text-center" action="{{ route('equipment-stocks.store') }}" method="POST">
             @csrf
             <center>
-
                 <x-input name="quantity" type="number" label="Quantidade" />
                 <x-select :options="$equipments" class="form-control" name="equipments_id" valueField="name"
                     label="Equipamento" />
-
                 <br>
                 <button type="submit" class="btn btn-primary">Criar</button>
-
             </center>
         </form>
     </body>

@@ -18,13 +18,10 @@
 
     <body>
         @if ($errors->any())
-
-
             <div class="alert alert-danger">
                 @foreach ($errors->all() as $error)
                     <li><span>{{ $error }}</span></li>
                 @endforeach
-                </ul>
             </div>
         @endif
         <center>
@@ -35,7 +32,6 @@
             @method('PUT')
             <center>
                 <x-input name="name" type="text" label="Esporte" value="{{ $sport->name ?? old('name') }}" />
-
                 <form class="row g-3">
                     <div class="col-md-4">
                         <label>Equipamento</label>
@@ -48,9 +44,9 @@
                     </div>
                 </form>
                 <button type="submit" class="btn btn-primary">Editar</button>
+            </center>
+        </form>
     </body>
 
     </html>
-
-    </form>
 </x-app-layout>

@@ -12,11 +12,6 @@ use Illuminate\Http\Request;
 
 class SportsController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
 
@@ -27,11 +22,6 @@ class SportsController extends Controller
         return view('sport.index', compact('sports', 'blocks', 'equipment'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         $equipments = Equipment::all();
@@ -40,12 +30,6 @@ class SportsController extends Controller
         return view('sport.create', compact('sports', 'blocks', 'equipments'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(SportsStoreRequest $request)
     {
 
@@ -53,23 +37,10 @@ class SportsController extends Controller
         return redirect()->route('sports.index');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
-        //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         $sport = Sport::all();
@@ -81,13 +52,6 @@ class SportsController extends Controller
         return view('sport.edit', compact('equipments', 'blocks', 'sport'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(SportUpdateRequest $request, Sport $sport)
     {
         $sport->update($request->validated());
@@ -95,12 +59,6 @@ class SportsController extends Controller
         return redirect()->route('sports.index');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(Sport $sport)
     {
 

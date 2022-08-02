@@ -31,4 +31,8 @@ class Equipment extends Model
     {
         return $this->belongsTo(EquipmentType::class);
     }
+    public function equipment_use()
+    {
+        return $this->belongsTo(EquipmentUse::class, 'equipment_use');
+    }
 }

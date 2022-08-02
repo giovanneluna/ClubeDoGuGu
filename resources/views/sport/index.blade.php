@@ -14,10 +14,8 @@
         <center><a href="sports/create" button type="submit" class="btn btn-info">Cadastrar
                 Esporte </button></a>
         </center>
-
-
         <br>
-        <table class=" table table-bordered table text-white ">
+        <table class=" table table-bordered text-white ">
             <thead class="table-warning">
                 <tr>
                     <th scope="col">Código</th>

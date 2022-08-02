@@ -22,8 +22,7 @@
     <body>
         <center><a href="clients/create" button type="submit" class="btn btn-info">Cadastrar
                 Cliente</button></a></center><br>
-
-        <table class=" table table-bordered table text-white">
+        <table class=" table table-bordered text-white">
             <thead class="table-warning">
                 <tr>
                     <th scope="col">Código</th>
@@ -62,7 +61,6 @@
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
                 integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
             </script>
-
     </body>
     <div class="py-4">
         {{ $clients->links() }}
