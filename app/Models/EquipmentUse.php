@@ -11,6 +11,6 @@ class EquipmentUse extends Model
 
     public function equipments()
     {
-        return $this->hasOne(Equipment::class, 'equipment_id');
+        // return $this->hasOne(Equipment::class, 'equipment_id');
     }
 }

@@ -21,21 +21,19 @@ class SchedulesController extends Controller
 
     public function index()
     {
-        $equipments_use = EquipmentUse::get();
         $client = Client::get();
         $schedules = Schedule::get();
-        return view('schedule.index', compact('schedules', 'client', 'equipments_use,'));
+        return view('schedule.index', compact('schedules', 'client'));
     }
 
     public function create(Block $block)
     {
-        $equipments_use = EquipmentUse::get();
         $schedule = Schedule::all();
         $equipments = Equipment::all();
         $clients = Client::all();
         $blocks = Block::all();
 
-        return view('schedule.create', compact('blocks', 'clients', 'block', 'equipments', 'schedule', 'equipments_use'));
+        return view('schedule.create', compact('blocks', 'clients', 'block', 'equipments', 'schedule'));
     }
 
     public function store(SchedulesStoreRequest $request)
